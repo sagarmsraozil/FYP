@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".fragments.forget_password.screens.EmailFragment">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Forgot your password?"
+       android:textSize="32sp"
+       android:textAlignment="center"
+       android:textStyle="bold"
+       android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We'll send you email on how to reset your password."
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#615A5A"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Email Address"
+        android:textColorHint="#989FAA"
+        app:hintTextColor="#065DEF"
+        app:boxStrokeColor="#065DEF"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:inputType="textEmailAddress"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSendMail"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_btn"
+        android:layout_gravity="center"
+        android:text="Send Email"
+        android:layout_marginTop="10dp"
+        style="@style/btnTheme"/>
+
+
+</LinearLayout>

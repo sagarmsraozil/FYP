@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".fragments.booking_screens.SuccessBookingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking Details"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textSize="22sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Futsal"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvFutsal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nagarjun Futsal"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9803609163"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Booking Code"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bXcyd1"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Booked At(Date)"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvBooked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9803609163"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Booked At(Time)"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvBookedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9803609163"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Mar,2021"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunday"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12PM-1PM"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 1200"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Initiator"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvInitiator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9803609163"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Initiator2"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvInitiator2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9803609163"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Expired"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:textColor="#ff6600"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tvExpired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#ff6600"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:backgroundTint="#ff6600"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:text="DONE"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

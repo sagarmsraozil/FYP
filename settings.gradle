@@ -1,0 +1,3 @@
+include ':futsalarenawearos'
+include ':app'
+rootProject.name = "Futsal"

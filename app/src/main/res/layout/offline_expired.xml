@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="expired"
+            type="com.sagarmishra.futsal.entityapi.BookingRoomDB" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layoutExpired"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_expired_data"
+        android:elevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@drawable/bg_image2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cvImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/fotbol"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{expired.date}"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:textColor="#FB0101"
+                android:layout_marginLeft="8dp"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+
+
+            <TextView
+                android:id="@+id/tvFutsal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{expired.futsalName}"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#070000"
+                android:layout_margin="5dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{expired.time}"
+                android:textSize="16sp"
+
+                android:layout_marginLeft="10dp"
+                android:textColor="#070000"
+                android:layout_margin="5dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expired_details"
+                android:textSize="16sp"
+                android:textColor="#1976D2"
+                android:layout_margin="5dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

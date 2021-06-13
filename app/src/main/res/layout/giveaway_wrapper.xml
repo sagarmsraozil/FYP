@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:layout_margin="10dp"
+    android:padding="6dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/giveaway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:text="Giveaway from Barcelona Futsal"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:id="@+id/recycler"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F1EEEE"
+            android:padding="6dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Giveaway Status"
+                android:textSize="16sp"
+                android:textColor="#FB3D02"
+                />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ongoing"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="#FB3D02"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F1EEEE"
+            android:padding="6dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Participate From"
+                android:textSize="16sp"
+                android:textColor="#FB3D02"
+                />
+
+            <TextView
+                android:id="@+id/tvParticipate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2021-02-02"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="#FB3D02"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F1EEEE"
+            android:padding="6dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Participate Ends"
+                android:textSize="16sp"
+                android:textColor="#FB3D02"
+                />
+
+            <TextView
+                android:id="@+id/tvEnds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2021-02-02"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="#FB3D02"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F1EEEE"
+            android:padding="6dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Result At"
+                android:textSize="16sp"
+                android:textColor="#FB3D02"
+                />
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2021-02-02"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="#FB3D02"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="Participate"
+        android:layout_gravity="center"
+        android:id="@+id/btnParticipate"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#1A6BBC"
+        />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="Participated"
+        android:layout_gravity="center"
+        android:id="@+id/btnParticipated"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#64BA19"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

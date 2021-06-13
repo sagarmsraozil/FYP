@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_frag"
+    app:startDestination="@id/registrationControllerFragment">
+
+    <fragment
+        android:id="@+id/registrationControllerFragment"
+        android:name="com.sagarmishra.futsal.fragments.registration.RegistrationControllerFragment"
+        android:label="fragment_registration_controller"
+        tools:layout="@layout/fragment_registration_controller" >
+        <action
+            android:id="@+id/action_registrationControllerFragment_to_registrationFormFragment"
+            app:destination="@id/registrationFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFormFragment"
+        android:name="com.sagarmishra.futsal.fragments.registration.RegistrationFormFragment"
+        android:label="RegistrationFormFragment" />
+</navigation>

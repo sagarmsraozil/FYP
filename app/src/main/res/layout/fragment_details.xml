@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:elevation="6dp"
+    android:padding="10dp"
+    tools:context=".fragments.edit_details.DetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="3dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+       >
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="263dp"
+            android:layout_margin="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFn"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Firstname"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textLn"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Lastname"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="Gender"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rgGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#3949AB"
+                        android:checked="true"
+                        android:text="Male"
+                        android:textColor="#7E5540"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#3949AB"
+                        android:text="Female"
+                        android:textColor="#635A5A"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOthers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#3949AB"
+                        android:text="Others"
+                        android:textColor="#635A5A"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Email"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textUsername"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Username"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textAddress"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Address"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textPhone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="10"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Mobile Number"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="10" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textDOB"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#1A36DF"
+                    app:hintTextColor="#1A36DF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:hint="Enter Date of Birth"
+                    android:textColorHint="#534646">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="text" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnEdits"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:text="Edit"
+            android:layout_margin="6dp"
+            android:background="@drawable/bg_btn"
+            style="@style/btnTheme"/>
+    </LinearLayout>
+
+</LinearLayout>

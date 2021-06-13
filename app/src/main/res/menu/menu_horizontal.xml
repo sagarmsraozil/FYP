@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:title="Home"
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_roof"
+          />
+            />
+
+        <item
+            android:title="Invite"
+            android:id="@+id/nav_tournament"
+            android:icon="@drawable/ic_invitation"
+
+            />
+        <item
+            android:title="Comments"
+            android:id="@+id/nav_chats"
+            android:icon="@drawable/ic_chat"
+
+            />
+
+        <item
+            android:title="My Bookings"
+            android:id="@+id/nav_bookings"
+            android:icon="@drawable/ic_mybooking"/>
+        <item
+            android:title="Profile"
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_baseline_person_24"
+
+            />
+
+
+</menu>

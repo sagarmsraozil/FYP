@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/booking_frag"
+    app:startDestination="@id/bookingControllerFragment">
+
+
+    <fragment
+        android:id="@+id/bookingControllerFragment"
+        android:name="com.sagarmishra.futsal.fragments.booking_screens.BookingControllerFragment"
+        android:label="fragment_booking_controller"
+        tools:layout="@layout/fragment_booking_controller" >
+        <action
+            android:id="@+id/action_bookingControllerFragment_to_bookingFormFragment"
+            app:destination="@id/bookingFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFormFragment"
+        android:name="com.sagarmishra.futsal.fragments.booking_screens.BookingFormFragment"
+        android:label="fragment_booking_form"
+        tools:layout="@layout/fragment_booking_form" />
+</navigation>

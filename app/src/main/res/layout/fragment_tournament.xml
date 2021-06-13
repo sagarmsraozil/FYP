@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.TournamentFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_invitation">
+
+        <TextView
+            android:id="@+id/tvInvite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite"
+            android:textSize="42sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let Invite Your Friends"
+            android:layout_below="@+id/tvInvite"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="19sp"/>
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/friendship"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFn"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Friend's email Address"
+
+            android:textColorHint="#534646"
+            app:boxStrokeColor="#1A36DF"
+            app:hintTextColor="#1A36DF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.18">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_invitation"
+                android:inputType="text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnInvite"
+            style="@style/btnTheme"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Invite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textFn"
+            app:layout_constraintVertical_bias="0.38" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AccountFragment">
+
+
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.45"
+        android:scaleType="fitXY"
+        android:src="@drawable/boy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintStart_toStartOf="@+id/ivProfileImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" >
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jane Jane"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="normal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"/>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_three"
+        app:layout_constraintBottom_toTopOf="@+id/btnEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:tint="@color/black" />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:src="@drawable/ic_edit"
+        app:borderWidth="3dp"
+        app:rippleColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileImage"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfileImage" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEdit"
+        app:layout_constraintVertical_bias="0.050000012">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:background="#EBE4E2E2"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.13"
+                android:src="@drawable/ic_username"
+                app:tint="@color/purple_700"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="JaneDone"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:background="#EBE4E2E2"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.13"
+                android:src="@drawable/ic_email"
+                app:tint="@color/purple_700"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="jane@gmail.com"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:background="#EBE4E2E2"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.13"
+                android:src="@drawable/ic_phone"
+                app:tint="@color/purple_700"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="981234567"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:background="#EBE4E2E2"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.13"
+                android:src="@drawable/ic_location"
+                app:tint="@color/purple_700"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Swyambhu"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:background="#EBE4E2E2"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.13"
+                android:src="@drawable/ic_logout"
+                app:tint="@color/purple_700"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/tvDOB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
