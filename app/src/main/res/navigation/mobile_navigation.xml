@@ -30,4 +30,23 @@
         android:name="com.sagarmishra.futsal.fragments.MyBookingsFragment"
         android:label="fragment_my_bookings"
         tools:layout="@layout/fragment_my_bookings" />
+    <fragment
+        android:id="@+id/activate"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.ActivationFragment"
+        android:label="fragment_activation"
+        tools:layout="@layout/fragment_activation" />
+    <fragment
+        android:id="@+id/giveaway"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.GiveawayFragment"
+        android:label="fragment_giveaway"
+        tools:layout="@layout/fragment_giveaway" />
+    <fragment
+        android:id="@+id/warning"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.UserPointsFragment"
+        android:label="fragment_user_points"
+        tools:layout="@layout/fragment_user_points" />
+    <fragment
+        android:id="@+id/team"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.TeamFragment"
+        android:label="TeamFragment" />
 </navigation>

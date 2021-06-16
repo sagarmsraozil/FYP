@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivCross"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_disabled_by_default_24"
+        app:tint="#FF0202" />
+
+
+
+    <TextView
+        android:id="@+id/tvMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Genexus vs Team Rocket"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#1D000000"
+        android:elevation="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Futsal"
+                android:textSize="15sp"/>
+
+
+            <TextView
+                android:id="@+id/tvFutsalName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="Swyambhu Futsal"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Location"
+                android:textSize="15sp"/>
+
+
+            <TextView
+                android:id="@+id/tvFutsalAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="Swyambhu"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#1D000000"
+        android:elevation="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Game Day"
+                android:textSize="15sp"/>
+
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="21 June,2021"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Time"
+                android:textSize="15sp"/>
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="7 PM"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#1D000000"
+        android:elevation="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Battle Code"
+                android:textSize="15sp"/>
+
+
+            <TextView
+                android:id="@+id/tvCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="#abcdefghijkadsa"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0282C8"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Credited"
+                android:textSize="15sp"/>
+
+
+            <ImageView
+                android:id="@+id/ivCredited"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/bg_available"
+                android:layout_gravity="center"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Lets win boys!!"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/black"/>
+
+
+</LinearLayout>

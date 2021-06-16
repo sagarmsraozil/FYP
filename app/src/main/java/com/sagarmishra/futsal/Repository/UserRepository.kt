@@ -4,10 +4,7 @@ import com.sagarmishra.futsal.api.ApiRequest
 import com.sagarmishra.futsal.api.AuthAPI
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.entityapi.AuthUser
-import com.sagarmishra.futsal.response.APIResponse
-import com.sagarmishra.futsal.response.LoginResponse
-import com.sagarmishra.futsal.response.PasswordResetResponse
-import com.sagarmishra.futsal.response.SignUpResponse
+import com.sagarmishra.futsal.response.*
 import okhttp3.MultipartBody
 
 class UserRepository():ApiRequest() {
@@ -87,6 +84,30 @@ class UserRepository():ApiRequest() {
     {
         return apiRequest {
             authService.verifyPasswordResetCode(RetrofitService.resetToken!!,pin)
+        }
+    }
+
+    suspend fun accountActivation():PasswordResetResponse
+    {
+        return apiRequest {
+            authService.accountActivation(RetrofitService.token!!)
+        }
+    }
+
+    suspend fun verifyActivation(pin1:String="",pin2:String="",pin3:String="",pin4:String="",token1:String=""):ActivationResponse
+    {
+        return apiRequest {
+            authService.verifyAccountActivation(
+                RetrofitService.token!!,
+                pin1, pin2, pin3, pin4, token1
+            )
+        }
+    }
+
+    suspend fun fetchMyPoint():GlobalResponse
+    {
+        return apiRequest {
+            authService.getPoints(RetrofitService.token!!)
         }
     }
 }

@@ -13,23 +13,14 @@
         android:padding="10dp"
         android:orientation="horizontal">
 
-        <ImageView
 
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_weight="0.12"
-            android:src="@drawable/fotbol"
-            app:tint="@color/black"
-            android:scaleType="fitXY"
-            android:id="@+id/ivImage"
-            />
 
         <AutoCompleteTextView
             android:id="@+id/etSearch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="15dp"
+
             android:hint="Search in Futsal Arena"
             android:textColorHint="#917E7E"
             android:background="@drawable/bg_search"

@@ -1,34 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawerLayout"
+    >
 
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/vertical_bar"
+        android:layout_gravity="start"
+        android:id="@+id/verticalBar"
+        android:background="#EFECEC"
+        android:theme="@style/verticalNav"
 
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/menu_horizontal"
-        app:itemIconTint="@color/icon_color"
-        app:itemTextColor="@color/icon_color"
-
-        android:background="@drawable/bg_navigation"
-        android:padding="3dp"
-        app:itemRippleColor="@color/white"
         />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_layout"/>
+
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_horizontal"
+            app:itemIconTint="@color/icon_color"
+            app:itemTextColor="@color/icon_color"
+
+            android:background="@drawable/bg_navigation"
+            android:padding="3dp"
+            app:itemRippleColor="@color/white"
+            />
+
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

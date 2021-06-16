@@ -1,10 +1,7 @@
 package com.sagarmishra.futsal.api
 
 import com.sagarmishra.futsal.entityapi.AuthUser
-import com.sagarmishra.futsal.response.APIResponse
-import com.sagarmishra.futsal.response.LoginResponse
-import com.sagarmishra.futsal.response.PasswordResetResponse
-import com.sagarmishra.futsal.response.SignUpResponse
+import com.sagarmishra.futsal.response.*
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -78,4 +75,26 @@ interface AuthAPI {
         @Field("token") token:String,
         @Field("pinCode") pin:String
     ):Response<PasswordResetResponse>
+
+    @POST("activationPinCode")
+    suspend fun accountActivation(
+        @Header("Authorization") token:String
+    ):Response<PasswordResetResponse>
+
+    @FormUrlEncoded
+    @POST("verifyActivationPinCode")
+    suspend fun verifyAccountActivation(
+        @Header("Authorization") token:String,
+        @Field("pin1") pin1:String,
+        @Field("pin2") pin2:String,
+        @Field("pin3") pin3:String,
+        @Field("pin4") pin4:String,
+        @Field("token") token1:String
+    ):Response<ActivationResponse>
+
+    @GET("getMyPoints")
+    suspend fun getPoints(
+        @Header("Authorization") token:String
+    ):Response<GlobalResponse>
+
 }

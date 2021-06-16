@@ -17,5 +17,8 @@ data class AuthUser(
        var dob:String?=null,
        var email:String?=null,
        var gender:String?=null,
-       var profilePicture:String?=null
+       var profilePicture:String?=null,
+       var account_activation:Boolean = false,
+       var dots:Int = 0,
+       var activeTitle:String?=null
 )

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="3dp"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:layout_height="200dp">
+
+    <TextView
+        android:id="@+id/matchStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Draw"
+        android:layout_gravity="end"
+        android:textColor="@color/white"
+        android:background="#FA5294"
+        android:padding="4dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvTournmentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Futsal Arena Championship"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cvTeam1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logoteam"/>
+
+
+            <TextView
+                android:id="@+id/tvTeamName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Team Genexus (TGX)"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_gravity="center"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Jun,2021-Wednesday| 11PM"
+                android:textSize="9sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvFutsal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barcelona Futsal"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvStage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GroupSTAGE|Group C"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvScores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3-3"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cvTeam2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logoteam"/>
+
+
+            <TextView
+                android:id="@+id/tvTeamName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:text="Team Genexus (TGX)"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

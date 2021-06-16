@@ -32,7 +32,7 @@ class AccountFragment : Fragment(),View.OnClickListener,PopupMenu.OnMenuItemClic
     private lateinit var tvName : TextView
     private lateinit var ivProfileImg : ImageView
     private lateinit var btnEdit : FloatingActionButton
-    private lateinit var ivSetting : ImageView
+
     var CONTACT_REQUEST_CODE = 1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +45,7 @@ class AccountFragment : Fragment(),View.OnClickListener,PopupMenu.OnMenuItemClic
         tvPhone.setOnClickListener(this)
         tvEmail.setOnClickListener(this)
         tvDOB.setOnClickListener(this)
-        ivSetting.setOnClickListener(this)
+
         addValues()
         return view
     }
@@ -60,10 +60,10 @@ class AccountFragment : Fragment(),View.OnClickListener,PopupMenu.OnMenuItemClic
         tvName = v.findViewById(R.id.tvName)
         ivProfileImg = v.findViewById(R.id.ivProfileImage)
         btnEdit = v.findViewById(R.id.btnEdit)
-        ivSetting = v.findViewById(R.id.ivSetting)
+
     }
 
-    private fun addValues(/**/)
+    private fun addValues()
     {
         if(RetrofitService.online == true)
         {
@@ -146,12 +146,7 @@ class AccountFragment : Fragment(),View.OnClickListener,PopupMenu.OnMenuItemClic
                 Logout(requireActivity(),requireContext()).logout()
             }
 
-            R.id.ivSetting ->{
-                var popMenu = PopupMenu(requireContext(),tvPhone)
-                popMenu.menuInflater.inflate(R.menu.menu_setting,popMenu.menu)
-                popMenu.setOnMenuItemClickListener(this)
-                popMenu.show()
-            }
+
 
         }
     }

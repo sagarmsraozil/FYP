@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/promoteToLeader"
+        android:title="Promote to Leader"/>
+
+    <item
+        android:id="@+id/promote"
+        android:title="Promote to Coleader"/>
+
+    <item
+        android:id="@+id/demote"
+        android:title="Demote to Member"/>
+
+
+
+    <item
+        android:id="@+id/kick"
+        android:title="Kick"/>
+</menu>

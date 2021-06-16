@@ -24,7 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Futsal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GiveawayActivity"></activity>
+        <activity android:name=".TournamentActivity"></activity>
+        <activity android:name=".BattleLogActivity" />
+        <activity android:name=".GiveawayActivity" />
         <activity android:name=".ViewCommentsActivity" />
         <activity android:name=".UserEditActivity" />
         <activity android:name=".MyBookingDetailsActivity" />

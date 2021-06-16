@@ -1,6 +1,8 @@
 package com.sagarmishra.futsal.model
 
 import com.sagarmishra.futsal.entityapi.AuthUser
+import com.sagarmishra.futsal.entityapi.Battle
+import com.sagarmishra.futsal.entityapi.Team
 import com.sagarmishra.futsal.entityroom.User
 import java.text.SimpleDateFormat
 import java.util.*
@@ -16,6 +18,11 @@ object StaticData {
     var markDetails:MutableMap<String,MutableList<String>>? = null
     var bookTimes:MutableMap<String,String>? = null
     var markAndInstance:MutableMap<String,Int>? =null
+    var team: Team?=null
+    var upcomingBattles:MutableList<Battle>?=null
+    var resultBattles:MutableList<Battle>?=null
+    var deletableBattle:MutableList<String>?=null
+    var tournamentHistory:MutableMap<String,Any>? = null
 
     fun makeDateAndTime():MutableList<DateAndTime>
     {

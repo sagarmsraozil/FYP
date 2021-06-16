@@ -11,4 +11,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="details"><u>Click Here</u></string>
     <string name="expired_details"><u>More Details</u></string>
+    <string name="navigation_drawer_open"> Open navigation drawer </string>
+    <string name="navigation_drawer_close"> Close navigation drawer </string>
+    <string name="activation"> <u> Activation Code Here </u> </string>
 </resources>

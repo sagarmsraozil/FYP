@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:elevation="10dp"
+    android:layout_margin="6dp"
+    android:background="@color/white"
+    android:padding="4dp"
+    android:layout_height="70dp">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/playerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sagar Mishra as sagarmsra"
+            android:textColor="@color/black"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            >
+
+            <TextView
+                android:id="@+id/playerRole"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Leader"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/playerTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="S1 Master"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:textAlignment="center"
+                android:background="#FF68A3"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/ivSettings"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="0.3"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        app:tint="@color/black" />
+
+
+
+
+
+
+
+
+
+</LinearLayout>

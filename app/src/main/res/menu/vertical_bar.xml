@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <group android:checkableBehavior="single">
+            <item android:title="Team">
+                <menu>
+                    <item android:title="Team"
+                        android:id="@+id/team"
+                        android:icon="@drawable/boy"/>
+                    <item android:title="Tournament"
+                        android:id="@+id/tournament"
+                        android:icon="@drawable/boy"/>
+
+                    <item android:title="Chat"
+                        android:id="@+id/chat"
+                        android:icon="@drawable/boy"/>
+
+                </menu>
+            </item>
+        </group>
+    <group android:checkableBehavior="single">
+        <item android:title="Personal">
+        <menu>
+            <item android:title="Account Activation"
+                android:id="@+id/activate"
+                android:icon="@drawable/boy"/>
+            <item android:title="Points Counter"
+                android:id="@+id/warning"
+                android:icon="@drawable/boy"/>
+        </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Extra">
+        <menu>
+            <item android:title="Giveaway"
+                android:id="@+id/giveaway"
+                android:icon="@drawable/boy"/>
+        </menu>
+        </item>
+    </group>
+</menu>
