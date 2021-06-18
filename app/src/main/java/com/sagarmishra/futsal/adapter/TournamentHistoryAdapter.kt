@@ -13,7 +13,7 @@ import com.sagarmishra.futsal.entityapi.TournamentMatch
 import com.sagarmishra.futsal.model.StaticData
 import de.hdodenhof.circleimageview.CircleImageView
 
-class TournamentHistoryAdapter(val context:Context,var lstTournament:MutableList<TournamentMatch>):RecyclerView.Adapter<TournamentHistoryAdapter.TournamentHistoryViewHolder>() {
+class TournamentHistoryAdapter(val context:Context,var lstTournament:MutableList<TournamentMatch>,var type:String):RecyclerView.Adapter<TournamentHistoryAdapter.TournamentHistoryViewHolder>() {
     class TournamentHistoryViewHolder(val view:View):RecyclerView.ViewHolder(view)
     {
         val matchStats:TextView = view.findViewById(R.id.matchStats)
@@ -39,10 +39,16 @@ class TournamentHistoryAdapter(val context:Context,var lstTournament:MutableList
         holder.tvTeamName1.text = match.team1!!.teamName
         holder.tvTeamName2.text = match.team2!!.teamName
 
-        if(StaticData.tournamentHistory!!.keys.contains(match._id))
+        if(StaticData.tournamentHistory!!.keys.contains(match._id) && type == "history")
         {
             holder.matchStats.text = StaticData.tournamentHistory!![match._id].toString()
         }
+
+        if(type == "match")
+        {
+            holder.matchStats.text = "Best Wishes"
+        }
+
 
         if(match.team1!!.teamLogo != "no-logo.png")
         {
@@ -77,7 +83,15 @@ class TournamentHistoryAdapter(val context:Context,var lstTournament:MutableList
             holder.tvStage.text = "N/A"
         }
 
-        holder.tvScores.text = "${match.goals!![0]} - ${match.goals!![1]}"
+        if(type == "match")
+        {
+            holder.tvScores.text = "VS"
+        }
+        else
+        {
+            holder.tvScores.text = "${match.goals!![0]} - ${match.goals!![1]}"
+        }
+
 
     }
 

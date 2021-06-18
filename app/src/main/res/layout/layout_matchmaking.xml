@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_margin="8dp"
+    android:elevation="10dp"
+    android:padding="5dp"
+    android:layout_height="380dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logoteam"
+        android:id="@+id/ivLogo"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Genexus(TGX)"
+        android:layout_gravity="center"
+        android:textColor="#FB0303"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tvTeamName"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Age Group: 18"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/tvAge"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Location: Swyambhu"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="end"
+            android:id="@+id/tvLocation"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Distance: 2.2KM"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/tvDistance"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Tier: Bronze V"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:id="@+id/tvTier"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="S/C: 2.2"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:id="@+id/tvRatio"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:padding="4dp"
+        android:elevation="8dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Team Genexus"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvTeam1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Predictions"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Anteiku Gangsters"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvTeam2"/>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="3dp"
+            android:background="#41000000"
+            android:elevation="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="10%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvWin1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Win"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="20%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvWin2"/>
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="3dp"
+            android:background="#41000000"
+            android:elevation="6dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="10%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvDraw1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Draw"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="20%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvDraw2"/>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="3dp"
+            android:background="#41000000"
+            android:elevation="6dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="10%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvLoss1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Loss"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="20%"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/tvLoss2"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ScoreLine Predictions"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Genexus: 4 - Team Rocket: 0"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/tvScoreLine"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Ask for Match"
+        android:layout_marginTop="4dp"
+        android:elevation="6dp"
+        android:id="@+id/btnAsk"/>
+
+
+
+</LinearLayout>

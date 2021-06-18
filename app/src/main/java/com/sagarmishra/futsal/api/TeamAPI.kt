@@ -1,9 +1,6 @@
 package com.sagarmishra.futsal.api
 
-import com.sagarmishra.futsal.response.BattleResponse
-import com.sagarmishra.futsal.response.GlobalResponse
-import com.sagarmishra.futsal.response.TeamResponse
-import com.sagarmishra.futsal.response.TeamStatsResponse
+import com.sagarmishra.futsal.response.*
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -71,4 +68,50 @@ interface TeamAPI {
         @Header("Authorization") token:String,
         @Field("bid") bid:String
     ):Response<GlobalResponse>
+
+    @GET("myTeamTierHistory/{tid}")
+    suspend fun myTeamTierHistory(
+        @Path("tid") tid:String
+    ):Response<TeamStatsHistory>
+
+    @FormUrlEncoded
+    @POST("findMatchingTeam")
+    suspend fun findMatchingTeam(
+        @Header("Authorization") token:String,
+        @Field("tid") tid:String
+    ):Response<MatchMakingResponse>
+
+    @FormUrlEncoded
+    @POST("randomMatching")
+    suspend fun randomMatching(
+        @Header("Authorization") token:String,
+        @Field("tid") tid:String
+    ):Response<MatchMakingResponse>
+
+    @FormUrlEncoded
+    @POST("requestAMatch")
+    suspend fun requestAMatch(
+        @Header("Authorization") token:String,
+        @Field("homeId")hid:String,
+        @Field("awayId")aid:String
+    ):Response<GlobalResponse>
+
+    @GET("fetchEveryTeams")
+    suspend fun fetchEveryTeams(
+
+    ):Response<EveryTeamResponse>
+
+    @GET("fetchReqNeedTeam/{tid}")
+    suspend fun fetchSingleTeam(
+        @Path("tid") tid:String
+    ):Response<TeamResponse>
+
+    @FormUrlEncoded
+    @POST("requestToJoin")
+    suspend fun requestToJoin(
+        @Header("Authorization") token:String,
+        @Field("teamId") id:String
+    ):Response<GlobalResponse>
+
+
 }

@@ -5,7 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
+    android:layout_margin="5dp"
     tools:context=".fragments.match_fragments.TournamentResultFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvWins"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Wins:4"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvDraw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Draw:4"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvLoss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Loss:4"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/tvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/bg_search"
+        android:hint="Search..."
+        android:drawableLeft="@drawable/ic_search"
+        android:textSize="18sp"
+        android:layout_marginBottom="3dp"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/tvRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 Records"
+        android:layout_gravity="end"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

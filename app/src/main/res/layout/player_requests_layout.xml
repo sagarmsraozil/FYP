@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:layout_height="130dp">
+
+    <TextView
+        android:id="@+id/tvPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sagar Mishra (sagarmsra)"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="6dp"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="sagarcrcoc@gmail.com"
+            android:textColor="@color/black"
+            android:id="@+id/tvEmail"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="9803609163"
+            android:textColor="@color/black"
+            android:id="@+id/tvPhone"
+            android:gravity="end"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:id="@+id/btnAccept"
+            android:layout_margin="3dp"
+            android:backgroundTint="#469104"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Decline"
+            android:id="@+id/btnDecline"
+            android:layout_margin="3dp"
+            android:backgroundTint="#FB0202"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

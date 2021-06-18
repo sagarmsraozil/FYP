@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12 Jun,2021-Wednesday| 11PM"
-                android:textSize="9sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:textColor="@color/black"/>
 

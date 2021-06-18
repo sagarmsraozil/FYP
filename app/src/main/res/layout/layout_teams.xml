@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_margin="3dp"
+    android:background="@color/white"
+    android:elevation="6dp"
+    android:layout_height="50dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivTeamLogo"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logoteam"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_weight="0.3"/>
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Team Genexus(TGX)"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:id="@+id/tvTeam"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="1/8"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_weight="0.4"
+        android:id="@+id/tvPlayers"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="17"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_weight="0.3"
+        android:id="@+id/tvAgeGroup"/>
+
+
+</LinearLayout>

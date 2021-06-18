@@ -12,7 +12,7 @@
         android:id="@+id/tvSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search by Day..."
+        android:hint="Search by Day or code..."
         android:padding="15dp"
         android:background="@drawable/bg_search"
 

@@ -12,12 +12,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
-import com.sagarmishra.futsal.BattleLogActivity
-import com.sagarmishra.futsal.MainActivity
-import com.sagarmishra.futsal.R
+import com.sagarmishra.futsal.*
 import com.sagarmishra.futsal.Repository.TeamRepository
-import com.sagarmishra.futsal.TournamentActivity
 import com.sagarmishra.futsal.adapter.PlayerAdapter
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.entityapi.AuthUser
@@ -29,7 +27,7 @@ import kotlinx.coroutines.*
 import java.lang.Exception
 
 
-class TeamFragment : Fragment(),View.OnClickListener {
+class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefreshListener {
     private lateinit var tvTeamName:TextView
     private lateinit var tvTeamCode:TextView
     private lateinit var tvSeasonCount:TextView
@@ -44,6 +42,9 @@ class TeamFragment : Fragment(),View.OnClickListener {
     private lateinit var btnDisband:Button
     private lateinit var btnBattleLog:Button
     private lateinit var btnTournamentLog:Button
+    private lateinit var swipe:SwipeRefreshLayout
+    private lateinit var btnStats:Button
+    private lateinit var btnSearchMatch:Button
     var lstPlayers:MutableList<AuthUser> = mutableListOf()
     var teamId:String = ""
 
@@ -74,6 +75,9 @@ class TeamFragment : Fragment(),View.OnClickListener {
         btnDisband = v!!.findViewById(R.id.btnDisband)
         btnBattleLog = v!!.findViewById(R.id.btnBattleLog)
         btnTournamentLog = v!!.findViewById(R.id.btnTournamentLog)
+        swipe = v!!.findViewById(R.id.swipe)
+        btnStats = v!!.findViewById(R.id.btnStats)
+        btnSearchMatch = v!!.findViewById(R.id.btnSearchMatch)
     }
 
     private fun listeners()
@@ -82,6 +86,9 @@ class TeamFragment : Fragment(),View.OnClickListener {
         btnLeave.setOnClickListener(this)
         btnBattleLog.setOnClickListener(this)
         btnTournamentLog.setOnClickListener(this)
+        swipe.setOnRefreshListener(this)
+        btnStats.setOnClickListener(this)
+        btnSearchMatch.setOnClickListener(this)
     }
 
     private fun initialize()
@@ -130,9 +137,19 @@ class TeamFragment : Fragment(),View.OnClickListener {
                             Glide.with(requireContext()).load(imgPath).into(ivLogo)
                         }
 
-                        adapter = PlayerAdapter(requireContext(),lstPlayers,response.data!!)
+                        adapter = PlayerAdapter(requireContext(),lstPlayers,response.data!!,"team")
                         recycler.adapter = adapter
                         recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+
+
+                        if(response.data!!.teamOwner == StaticData.user!!._id || (response.data!!.teamColeader != null && response.data!!.teamColeader == StaticData.user!!._id))
+                        {
+                            btnSearchMatch.visibility = View.VISIBLE
+                        }
+                        else
+                        {
+                            btnSearchMatch.visibility = View.GONE
+                        }
                     }
 
 
@@ -161,7 +178,10 @@ class TeamFragment : Fragment(),View.OnClickListener {
                 {
                     withContext(Dispatchers.Main)
                     {
-                        tvTitleName.snackbar("${response.message}")
+                        var intent = Intent(requireContext(),NewTeamActivity::class.java)
+                        intent.putExtra("task","Join")
+                        startActivity(intent)
+
                     }
 
                 }
@@ -283,7 +303,23 @@ class TeamFragment : Fragment(),View.OnClickListener {
                 val intent = Intent(requireContext(),TournamentActivity::class.java)
                 startActivity(intent)
             }
+            R.id.btnStats ->{
+                val intent = Intent(requireContext(),StatsActivity::class.java)
+                intent.putExtra("teamId",StaticData.team!!._id)
+                startActivity(intent)
+            }
+            R.id.btnSearchMatch ->{
+                val intent = Intent(requireContext(),SearchMatchActivity::class.java)
+                startActivity(intent)
+            }
         }
+    }
+
+    override fun onRefresh() {
+       val intent = Intent(requireContext(),MainActivity::class.java)
+        intent.putExtra("FRAGMENT_NUMBER",8)
+        startActivity(intent)
+        requireActivity().finish()
     }
 
 

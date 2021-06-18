@@ -23,7 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class PlayerAdapter(val context:Context,val lstPlayers:MutableList<AuthUser>,val team: Team):RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
+class PlayerAdapter(val context:Context,val lstPlayers:MutableList<AuthUser>,val team: Team,var task:String):RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
     class PlayerViewHolder(val view:View):RecyclerView.ViewHolder(view)
     {
         val playerName:TextView = view.findViewById(R.id.playerName)
@@ -257,33 +257,45 @@ class PlayerAdapter(val context:Context,val lstPlayers:MutableList<AuthUser>,val
         {
             holder.playerTitle.visibility = View.GONE
         }
-
-        if(playerRole == "Leader")
+        if(task == "other")
         {
             holder.ivSettings.visibility = View.GONE
         }
-        if((role == "CoLeader" && playerRole == "CoLeader") || (role == "CoLeader" && playerRole == "Leader"))
+        else
         {
-            holder.ivSettings.visibility = View.GONE
-        }
+            if(playerRole == "Leader")
+            {
+                holder.ivSettings.visibility = View.GONE
+            }
+            if((role == "CoLeader" && playerRole == "CoLeader") || (role == "CoLeader" && playerRole == "Leader"))
+            {
+                holder.ivSettings.visibility = View.GONE
+            }
 
-        if(playerRole == "CoLeader" && role == "Leader")
-        {
-            holder.ivSettings.visibility = View.VISIBLE
-            pop.menuInflater.inflate(R.menu.team_role,pop.menu)
-            var menu = pop.menu
-            menu.findItem(R.id.promote).isVisible = false
-            menu.findItem(R.id.kick).isVisible = false
+            if(playerRole == "CoLeader" && role == "Leader")
+            {
+                holder.ivSettings.visibility = View.VISIBLE
+                pop.menuInflater.inflate(R.menu.team_role,pop.menu)
+                var menu = pop.menu
+                menu.findItem(R.id.promote).isVisible = false
+                menu.findItem(R.id.kick).isVisible = false
 
-        }
+            }
 
-        if((role == "Leader" || role == "CoLeader") && (playerRole == "Member"))
-        {
-            holder.ivSettings.visibility = View.VISIBLE
-            pop.menuInflater.inflate(R.menu.team_role,pop.menu)
-            var menu = pop.menu
-            menu.findItem(R.id.promoteToLeader).isVisible = false
-            menu.findItem(R.id.demote).isVisible = false
+            if((role == "Leader" || role == "CoLeader") && (playerRole == "Member"))
+            {
+                holder.ivSettings.visibility = View.VISIBLE
+                pop.menuInflater.inflate(R.menu.team_role,pop.menu)
+                var menu = pop.menu
+                menu.findItem(R.id.promoteToLeader).isVisible = false
+                menu.findItem(R.id.demote).isVisible = false
+            }
+
+            if(role == "Member")
+            {
+                holder.ivSettings.visibility = View.GONE
+            }
+
         }
 
 

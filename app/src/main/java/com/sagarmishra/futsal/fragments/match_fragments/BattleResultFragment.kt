@@ -38,10 +38,17 @@ class BattleResultFragment : Fragment() {
 
     private fun initialize()
     {
-        var battleCode = StaticData.resultBattles!!.map{
-            it.battleCode!!
-        }
-        days.addAll(battleCode.toMutableList())
+         var battleCode = StaticData.resultBattles!!.map{
+                it.battleCode!!
+            }
+            var awayTeams = StaticData.resultBattles!!.map{
+                it.awayTeam!!.teamName!!
+            }
+
+            days.addAll(battleCode.toMutableList())
+            days.addAll(awayTeams.toMutableList().toMutableSet().toMutableList())
+
+
         val dayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_expandable_list_item_1,days)
         tvSearch.setAdapter(dayAdapter)
         tvSearch.threshold = 1
@@ -66,7 +73,7 @@ class BattleResultFragment : Fragment() {
         tvSearch.doOnTextChanged { text, start, before, count ->
             var searchData = StaticData.resultBattles!!.filter{
 
-                it.date!!.split("-")[1].toLowerCase().trim().startsWith(text.toString().toLowerCase().trim()) || it.battleCode == text.toString()
+                it.date!!.split("-")[1].toLowerCase().trim().startsWith(text.toString().toLowerCase().trim()) || it.battleCode == text.toString() || it.awayTeam!!.teamName!!.toLowerCase().trim().startsWith(text.toString().trim().toLowerCase())
             }
             adapter = BattleResultAdapter(requireContext(),searchData.toMutableList())
             recycler.adapter = adapter

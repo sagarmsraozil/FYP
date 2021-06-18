@@ -41,14 +41,8 @@ class BattleMatchFragment : Fragment() {
         tvSearch = view.findViewById(R.id.tvSearch)
         vp = requireActivity().findViewById(R.id.vp)
         initialize()
-        Thread.sleep(2000)
-        var battleCode = StaticData.upcomingBattles!!.map{
-            it.battleCode!!
-        }
-        days.addAll(battleCode.toMutableList())
-        var dayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_expandable_list_item_1,days)
-        tvSearch.setAdapter(dayAdapter)
-        tvSearch.threshold = 1
+
+
         searchWork()
         return view
     }
@@ -76,8 +70,22 @@ class BattleMatchFragment : Fragment() {
                     StaticData.upcomingBattles = upcoming.toMutableList()
                     StaticData.resultBattles = result.toMutableList()
 
+                    var battleCode = StaticData.upcomingBattles!!.map{
+                        it.battleCode!!
+                    }
+                    var awayTeams = StaticData.upcomingBattles!!.map{
+                        it.awayTeam!!.teamName!!
+                    }
+
+                    days.addAll(battleCode.toMutableList())
+                    days.addAll(awayTeams.toMutableSet().toMutableList())
+                    var dayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_expandable_list_item_1,days)
+
+
                     withContext(Dispatchers.Main)
                     {
+                        tvSearch.setAdapter(dayAdapter)
+                        tvSearch.threshold = 1
                         if(StaticData.upcomingBattles!!.size > 0)
                         {
                             tvMatches.text = "${StaticData.upcomingBattles!!.size} Matches on Pending"
@@ -91,10 +99,7 @@ class BattleMatchFragment : Fragment() {
 
                 }
                 else{
-                    withContext(Dispatchers.Main)
-                    {
-                        tvMatches.snackbar("${response.message}")
-                    }
+                   println(response.message)
                 }
             }
             catch(err:Exception)
@@ -116,7 +121,7 @@ class BattleMatchFragment : Fragment() {
     {
         tvSearch.doOnTextChanged { text, start, before, count ->
             var searchData = StaticData.upcomingBattles!!.filter{
-                it.date!!.split("-")[1].toLowerCase().trim().startsWith(text.toString().trim().toLowerCase())  || it.battleCode == text.toString()
+                it.date!!.split("-")[1].toLowerCase().trim().startsWith(text.toString().trim().toLowerCase())  || it.battleCode == text.toString() || it.awayTeam!!.teamName!!.toLowerCase().trim().startsWith(text.toString().trim().toLowerCase())
             }
             adapter = UpcomingBattleAdapter(requireContext(),searchData.toMutableList())
             recycler.adapter = adapter

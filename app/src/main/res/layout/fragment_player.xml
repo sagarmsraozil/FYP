@@ -5,33 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
-    android:layout_margin="5dp"
-    tools:context=".fragments.match_fragments.TournamentResultFragment">
-
-    <AutoCompleteTextView
-        android:id="@+id/tvSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:background="@drawable/bg_search"
-        android:hint="Search..."
-        android:drawableLeft="@drawable/ic_search"
-        android:textSize="18sp"
-        android:layout_marginBottom="3dp"
-        />
-
-
-
+    android:layout_margin="7dp"
+    tools:context=".fragments.request_fragments.PlayerFragment">
 
     <TextView
-        android:id="@+id/tvRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 Records"
+        android:text="5 requests"
         android:layout_gravity="end"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:id="@+id/tvRequests"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

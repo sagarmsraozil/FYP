@@ -19,10 +19,10 @@ object StaticData {
     var bookTimes:MutableMap<String,String>? = null
     var markAndInstance:MutableMap<String,Int>? =null
     var team: Team?=null
-    var upcomingBattles:MutableList<Battle>?=null
-    var resultBattles:MutableList<Battle>?=null
-    var deletableBattle:MutableList<String>?=null
-    var tournamentHistory:MutableMap<String,Any>? = null
+    var upcomingBattles:MutableList<Battle>?= mutableListOf()
+    var resultBattles:MutableList<Battle>? = mutableListOf()
+    var deletableBattle:MutableList<String>?= mutableListOf()
+    var tournamentHistory:MutableMap<String,Any>? = mutableMapOf()
 
     fun makeDateAndTime():MutableList<DateAndTime>
     {

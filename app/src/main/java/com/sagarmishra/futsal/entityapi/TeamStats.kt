@@ -11,14 +11,16 @@ data class TeamStats(
     val wins:Int=0,
     val draw:Int=0,
     val loss:Int=0,
-    val winPercent:Int=0,
-    val drawPercent:Int=0,
-    val lossPercent:Int=0,
-    val ratio:Int=0,
+    val winPercent:Double=0.0,
+    val drawPercent:Double=0.0,
+    val lossPercent:Double=0.0,
+    val ratio:Double=0.0,
     val goalsScored:Int=0,
     val goalsConceaded:Int=0,
     val season:Int=0,
     val pointsCollected:Int=0,
     val pointInteraction:String?=null,
-    val tier:TierBadge?=null
+    val tier:TierBadge?=null,
+    val pointTree:MutableList<Int>? = null,
+    val team_id:Team?=null
 )
