@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="12dp"
+    android:layout_margin="6dp"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:layout_height="150dp">
+
+
+    <TextView
+        android:id="@+id/tvTeamName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Genexus(TGX) #1234567898"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Age Group: 19"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:id="@+id/tvAge"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Located City: Swyambhu"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:id="@+id/tvAddress"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/ivStatus"
+        android:src="@drawable/ic_hourglass"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:tint="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/layoutDecision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Accept"
+            android:backgroundTint="#66CF0B"
+            android:layout_weight="1"
+            android:id="@+id/btnAccept"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Decline"
+            android:backgroundTint="#FF030C"
+            android:layout_weight="1"
+            android:id="@+id/btnDecline"/>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21 Jun,2021-Wednesday"
+        android:id="@+id/tvDate"/>
+
+
+
+</LinearLayout>

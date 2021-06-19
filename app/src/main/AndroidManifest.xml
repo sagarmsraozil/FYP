@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Futsal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RequestsActivity"></activity>
+        <activity android:name=".AddBattleActivity"></activity>
+        <activity android:name=".RequestsActivity" />
         <activity android:name=".SingleTeamActivity" />
         <activity android:name=".NewTeamActivity" />
         <activity android:name=".SearchMatchActivity" />

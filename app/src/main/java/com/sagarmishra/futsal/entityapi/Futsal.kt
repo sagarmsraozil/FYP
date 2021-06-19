@@ -27,7 +27,8 @@ data class Futsal(
     var longitude:Double = 0.0,
     var superPrice:Int = 0,
     var rating:Int = 0,
-    var totalComments:Int = 0
+    var totalComments:Int = 0,
+    var futsalCode:String?=null
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
@@ -48,7 +49,9 @@ data class Futsal(
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readInt(),
-        parcel.readInt()
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString()
     ) {
     }
 
@@ -72,6 +75,8 @@ data class Futsal(
         parcel.writeDouble(longitude)
         parcel.writeInt(superPrice)
         parcel.writeInt(rating)
+        parcel.writeInt(totalComments)
+        parcel.writeString(futsalCode)
     }
 
     override fun describeContents(): Int {
@@ -87,5 +92,6 @@ data class Futsal(
             return arrayOfNulls(size)
         }
     }
+
 
 }

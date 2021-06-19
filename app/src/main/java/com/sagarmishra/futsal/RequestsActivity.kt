@@ -34,7 +34,7 @@ class RequestsActivity : AppCompatActivity() {
         vp.isUserInputEnabled = true
 
         TabLayoutMediator(tabLayout,vp){ tab: TabLayout.Tab, i: Int ->
-            tab.text = titleAndFragment.keys.toMutableList()[0]
+            tab.text = titleAndFragment.keys.toMutableList()[i]
         }.attach()
 
     }

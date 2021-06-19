@@ -10,7 +10,7 @@ import com.sagarmishra.futsal.entityroom.User
 
 @Database(
        entities = [(Futsal::class),(FutsalInstances::class),(BookingRoomDB::class),(Booking::class)],
-       version = 3,
+       version = 4,
         exportSchema = false
 )
 @TypeConverters(Converters::class,BookingConverter::class)

@@ -40,6 +40,7 @@ class MatchMakingAdapter(val context:Context,var lstMatchMaking:MutableList<Matc
         val tvLoss2:TextView = view.findViewById(R.id.tvLoss2)
         val tvScoreLine:TextView = view.findViewById(R.id.tvScoreLine)
         val btnAsk:Button = view.findViewById(R.id.btnAsk)
+        val tvTitle:TextView = view.findViewById(R.id.tvTitle)
 
     }
 
@@ -65,6 +66,16 @@ class MatchMakingAdapter(val context:Context,var lstMatchMaking:MutableList<Matc
         holder.tvLoss1.text = match.myLoss.toString()+"%"
         holder.tvLoss2.text = match.opponentLoss.toString()+"%"
         holder.tvScoreLine.text = match.scoreLine
+
+        if(match.opponent!!.activeTitle != null && match.opponent!!.activeTitle != "")
+        {
+            holder.tvTitle.text  = match.opponent!!.activeTitle
+            holder.tvTitle.visibility = View.VISIBLE
+        }
+        else
+        {
+            holder.tvTitle.visibility = View.GONE
+        }
 
         if(match.opponent!!.teamLogo == "no-logo.png")
         {

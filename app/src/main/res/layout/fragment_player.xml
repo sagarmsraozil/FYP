@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="7dp"
+    android:padding="3dp"
     tools:context=".fragments.request_fragments.PlayerFragment">
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_gravity="end"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="19sp"
+        android:textSize="13sp"
         android:id="@+id/tvRequests"/>
 
 

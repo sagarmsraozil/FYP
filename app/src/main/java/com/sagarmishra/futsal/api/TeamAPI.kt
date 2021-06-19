@@ -1,5 +1,6 @@
 package com.sagarmishra.futsal.api
 
+import com.sagarmishra.futsal.entityapi.Battle
 import com.sagarmishra.futsal.response.*
 import retrofit2.Response
 import retrofit2.http.*
@@ -113,5 +114,10 @@ interface TeamAPI {
         @Field("teamId") id:String
     ):Response<GlobalResponse>
 
+    @POST("setABattle")
+    suspend fun setABattle(
+        @Header("Authorization") token:String,
+        @Body battle:Battle
+    ):Response<GlobalResponse>
 
 }

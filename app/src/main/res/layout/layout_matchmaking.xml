@@ -6,7 +6,22 @@
     android:layout_margin="8dp"
     android:elevation="10dp"
     android:padding="5dp"
-    android:layout_height="380dp">
+    android:layout_height="400dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="S1 Legend"
+        android:id="@+id/tvTitle"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        android:padding="4dp"
+        android:elevation="4dp"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:layout_marginBottom="3dp"
+        />
 
 
     <de.hdodenhof.circleimageview.CircleImageView

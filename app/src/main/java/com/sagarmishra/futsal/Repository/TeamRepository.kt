@@ -3,6 +3,7 @@ package com.sagarmishra.futsal.Repository
 import com.sagarmishra.futsal.api.ApiRequest
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.api.TeamAPI
+import com.sagarmishra.futsal.entityapi.Battle
 import com.sagarmishra.futsal.response.*
 
 class TeamRepository():ApiRequest() {
@@ -126,5 +127,13 @@ class TeamRepository():ApiRequest() {
             teamAPI.requestToJoin(RetrofitService.token!!,tid)
         }
     }
+
+    suspend fun addBattle(battle:Battle):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.setABattle(RetrofitService.token!!,battle)
+        }
+    }
+
 
 }

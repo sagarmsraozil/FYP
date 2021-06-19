@@ -45,6 +45,7 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
     private lateinit var swipe:SwipeRefreshLayout
     private lateinit var btnStats:Button
     private lateinit var btnSearchMatch:Button
+    private lateinit var btnRequests:Button
     var lstPlayers:MutableList<AuthUser> = mutableListOf()
     var teamId:String = ""
 
@@ -78,6 +79,7 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
         swipe = v!!.findViewById(R.id.swipe)
         btnStats = v!!.findViewById(R.id.btnStats)
         btnSearchMatch = v!!.findViewById(R.id.btnSearchMatch)
+        btnRequests = v!!.findViewById(R.id.btnRequests)
     }
 
     private fun listeners()
@@ -89,6 +91,7 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
         swipe.setOnRefreshListener(this)
         btnStats.setOnClickListener(this)
         btnSearchMatch.setOnClickListener(this)
+        btnRequests.setOnClickListener(this)
     }
 
     private fun initialize()
@@ -310,6 +313,10 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
             }
             R.id.btnSearchMatch ->{
                 val intent = Intent(requireContext(),SearchMatchActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btnRequests ->{
+                val intent = Intent(requireContext(),RequestsActivity::class.java)
                 startActivity(intent)
             }
         }

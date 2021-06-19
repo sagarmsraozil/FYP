@@ -1,5 +1,6 @@
 package com.sagarmishra.futsal.fragments.match_fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.sagarmishra.futsal.AddBattleActivity
 import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.Repository.TeamRepository
 import com.sagarmishra.futsal.adapter.UpcomingBattleAdapter
@@ -23,12 +26,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class BattleMatchFragment : Fragment() {
+class BattleMatchFragment : Fragment(),View.OnClickListener {
     private lateinit var tvMatches:TextView
     private lateinit var recycler:RecyclerView
     private lateinit var vp:ViewPager2
     private lateinit var adapter:UpcomingBattleAdapter
     private lateinit var tvSearch:AutoCompleteTextView
+    private lateinit var btnAdd:Button
     var days:MutableList<String> = mutableListOf("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +43,10 @@ class BattleMatchFragment : Fragment() {
         tvMatches = view.findViewById(R.id.tvMatches)
         recycler = view.findViewById(R.id.recycler)
         tvSearch = view.findViewById(R.id.tvSearch)
+        btnAdd = view.findViewById(R.id.btnAdd)
+
         vp = requireActivity().findViewById(R.id.vp)
+        btnAdd.setOnClickListener(this)
         initialize()
 
 
@@ -49,7 +56,14 @@ class BattleMatchFragment : Fragment() {
 
     private fun initialize()
     {
-
+        if(StaticData.team!!.teamOwner == StaticData.user!!._id || (StaticData.team!!.teamColeader != null && StaticData.team!!.teamColeader == StaticData.user!!._id))
+        {
+            btnAdd.visibility = View.VISIBLE
+        }
+        else
+        {
+            btnAdd.visibility = View.GONE
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -138,6 +152,16 @@ class BattleMatchFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id)
+        {
+            R.id.btnAdd ->{
+                val intent = Intent(requireContext(),AddBattleActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
 
