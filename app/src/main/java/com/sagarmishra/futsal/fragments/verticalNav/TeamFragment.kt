@@ -347,6 +347,10 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                 startActivity(intent)
 
             }
+            R.id.btnEdit->{
+                val intent = Intent(requireContext(),EditTeamDetailsActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

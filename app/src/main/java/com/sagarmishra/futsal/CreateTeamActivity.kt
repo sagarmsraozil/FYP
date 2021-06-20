@@ -276,7 +276,7 @@ class CreateTeamActivity : AppCompatActivity(),View.OnClickListener {
                             }
                             else
                             {
-                                var errorBox = response.error!!.values.joinToString("\n")
+                                var errorBox = response.error!!.values.toMutableList().joinToString("\n")
                                 withContext(Dispatchers.Main)
                                 {
                                     alert("Error",errorBox)

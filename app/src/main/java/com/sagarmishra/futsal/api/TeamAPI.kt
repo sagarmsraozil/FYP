@@ -137,4 +137,22 @@ interface TeamAPI {
         @Body battle:Battle
     ):Response<GlobalResponse>
 
+    @FormUrlEncoded
+    @POST("teamDetailsUpdateRequest")
+    suspend fun detailsUpdate(
+        @Header("Authorization") token:String,
+        @Field("locatedCity") locatedCity:String,
+        @Field("teamEmail") email:String,
+        @Field("contact") contact:String,
+        @Field("ageGroup") age:String
+    ):Response<GlobalResponse>
+
+    @Multipart
+    @PUT("uploadTeamLogo")
+    suspend fun uploadLogo(
+        @Header("Authorization") token:String,
+        @Part teamLogo : MultipartBody.Part,
+        @Part("tid") tid:RequestBody
+    ):Response<GlobalResponse>
+
 }

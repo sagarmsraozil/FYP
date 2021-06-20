@@ -145,5 +145,18 @@ class TeamRepository():ApiRequest() {
         }
     }
 
+    suspend fun detailUpdate(address:String,email:String,contact:String,age:String):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.detailsUpdate(RetrofitService.token!!,address,email,contact,age)
+        }
+    }
+
+    suspend fun uploadLogo(body:MultipartBody.Part,tid:RequestBody):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.uploadLogo(RetrofitService.token!!,body,tid)
+        }
+    }
 
 }
