@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,6 +47,10 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
     private lateinit var btnStats:Button
     private lateinit var btnSearchMatch:Button
     private lateinit var btnRequests:Button
+    private lateinit var tvSeasonPoint:TextView
+    private lateinit var ivSearch:ImageView
+    private lateinit var tvStatus:TextView
+    private lateinit var btnEdit:Button
     var lstPlayers:MutableList<AuthUser> = mutableListOf()
     var teamId:String = ""
 
@@ -80,6 +85,10 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
         btnStats = v!!.findViewById(R.id.btnStats)
         btnSearchMatch = v!!.findViewById(R.id.btnSearchMatch)
         btnRequests = v!!.findViewById(R.id.btnRequests)
+        tvSeasonPoint = v!!.findViewById(R.id.tvSeasonPoint)
+        ivSearch = v!!.findViewById(R.id.ivSearch)
+        tvStatus = v!!.findViewById(R.id.tvStatus)
+        btnEdit = v!!.findViewById(R.id.btnEdit)
     }
 
     private fun listeners()
@@ -92,10 +101,14 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
         btnStats.setOnClickListener(this)
         btnSearchMatch.setOnClickListener(this)
         btnRequests.setOnClickListener(this)
+        ivSearch.setOnClickListener(this)
+        btnEdit.setOnClickListener(this)
     }
 
     private fun initialize()
     {
+
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val repo = TeamRepository()
@@ -108,8 +121,9 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                         StaticData.team = response.data!!
                         tvTeamName.text = response.data!!.teamName
                         tvTeamCode.text = response.data!!.teamCode
-                        tvSeasonCount.text = response.data!!.teamPlayers!!.size.toString()
+                        tvSeasonCount.text = response.data!!.teamPlayers!!.size.toString()+"/8"
                         lstPlayers = response.data!!.teamPlayers!!
+                        tvStatus.text = response.data!!.status!!
 
                         if(response.data!!.teamOwner == StaticData.user!!._id)
                         {
@@ -132,7 +146,7 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                         }
                         if(response.data!!.teamLogo == "no-logo.png")
                         {
-                            ivLogo.setBackgroundResource(R.drawable.logoteam)
+                            ivLogo.setImageResource(R.drawable.logoteam)
                         }
                         else
                         {
@@ -145,36 +159,42 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                         recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
 
 
-                        if(response.data!!.teamOwner == StaticData.user!!._id || (response.data!!.teamColeader != null && response.data!!.teamColeader == StaticData.user!!._id))
+                        if(StaticData.team!!.status == "Approved" && (StaticData.team!!.teamOwner == StaticData.user!!._id || (StaticData.team!!.teamColeader != null && StaticData.team!!.teamColeader == StaticData.user!!._id)))
                         {
-                            btnSearchMatch.visibility = View.VISIBLE
+                            btnSearchMatch.isEnabled = true
+                            btnEdit.visibility = View.VISIBLE
                         }
                         else
                         {
-                            btnSearchMatch.visibility = View.GONE
+                            btnSearchMatch.isEnabled = false
+                            btnEdit.visibility = View.GONE
                         }
                     }
 
 
-
-                    val response1 = repo.getTeamStats(teamId)
-                    if(response1.success == true)
+                    if(response.data!!.status == "Approved")
                     {
-                        withContext(Dispatchers.Main)
+                        val response1 = repo.getTeamStats(teamId)
+                        if(response1.success == true)
                         {
+                            withContext(Dispatchers.Main)
+                            {
 
-                            tvBattleCount.text = response1.data!!.matchPlayed.toString()
-                            tvPointsObtained.text = response1.data!!.pointsCollected.toString()
-                            tvTierReached.text = response1.data!!.tier!!.tierNomenclature
+                                tvBattleCount.text = response1.data!!.matchPlayed.toString()
+                                tvPointsObtained.text = response1.data!!.pointsCollected.toString()
+                                tvTierReached.text = response1.data!!.tier!!.tierNomenclature
+                                tvSeasonPoint.text = response1.data!!.season.toString()
+                            }
                         }
-                    }
-                    else
-                    {
-                        withContext(Dispatchers.Main)
+                        else
                         {
-                            tvTitleName.snackbar("${response.message}")
+                            withContext(Dispatchers.Main)
+                            {
+                                tvTitleName.snackbar("${response1.message}")
+                            }
                         }
                     }
+
 
                 }
                 else
@@ -222,8 +242,9 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                             withContext(Dispatchers.Main)
                             {
                                 btnDisband.snackbar("${response.message}")
+                                StaticData.team = null
                                 val intent = Intent(requireContext(),MainActivity::class.java)
-                                intent.putExtra("FRAGMENT_NUMBER",8)
+                                intent.putExtra("FRAGMENT_NUMBER",0)
                                 startActivity(intent)
                                 requireActivity().finish()
                             }
@@ -257,8 +278,9 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                         if(response.success == true)
                         {
                             btnDisband.snackbar("${response.message}")
+                            StaticData.team = null
                             val intent = Intent(requireContext(),MainActivity::class.java)
-                            intent.putExtra("FRAGMENT_NUMBER",8)
+                            intent.putExtra("FRAGMENT_NUMBER",0)
                             startActivity(intent)
                             requireActivity().finish()
                         }
@@ -318,6 +340,12 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
             R.id.btnRequests ->{
                 val intent = Intent(requireContext(),RequestsActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.ivSearch->{
+                var intent = Intent(requireContext(),NewTeamActivity::class.java)
+                intent.putExtra("task","Search")
+                startActivity(intent)
+
             }
         }
     }

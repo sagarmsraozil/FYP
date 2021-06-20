@@ -6,6 +6,7 @@
                     <item android:title="Team"
                         android:id="@+id/team"
                         android:icon="@drawable/boy"/>
+
                     <item android:title="Tournament"
                         android:id="@+id/tournament"
                         android:icon="@drawable/boy"/>

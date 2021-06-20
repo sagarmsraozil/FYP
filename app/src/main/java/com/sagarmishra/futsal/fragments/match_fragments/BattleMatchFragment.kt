@@ -56,7 +56,7 @@ class BattleMatchFragment : Fragment(),View.OnClickListener {
 
     private fun initialize()
     {
-        if(StaticData.team!!.teamOwner == StaticData.user!!._id || (StaticData.team!!.teamColeader != null && StaticData.team!!.teamColeader == StaticData.user!!._id))
+        if((StaticData.team!!.teamOwner == StaticData.user!!._id || (StaticData.team!!.teamColeader != null && StaticData.team!!.teamColeader == StaticData.user!!._id)) && StaticData.team!!.status == "Approved")
         {
             btnAdd.visibility = View.VISIBLE
         }

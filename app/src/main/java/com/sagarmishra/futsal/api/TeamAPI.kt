@@ -2,10 +2,27 @@ package com.sagarmishra.futsal.api
 
 import com.sagarmishra.futsal.entityapi.Battle
 import com.sagarmishra.futsal.response.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface TeamAPI {
+    @Multipart
+    @POST("createATeam")
+    suspend fun createATeam(
+        @Header("Authorization") token:String,
+        @Part("teamName") teamName:RequestBody,
+        @Part("teamTag") teamTag:RequestBody,
+        @Part("locatedCity") locatedCity:RequestBody,
+        @Part("ageGroup") ageGroup:RequestBody,
+        @Part("contact") contact:RequestBody,
+        @Part("teamEmail") teamEmail:RequestBody,
+        @Part citizenShipBack:MultipartBody.Part,
+        @Part citizenShipFront:MultipartBody.Part,
+        @Part ownerPhoto:MultipartBody.Part
+    ):Response<GlobalResponse>
+
     @GET("getMyTeam")
     suspend fun getMyTeam(
         @Header("Authorization") token:String

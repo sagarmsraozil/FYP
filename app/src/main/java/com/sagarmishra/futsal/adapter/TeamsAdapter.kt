@@ -35,7 +35,7 @@ class TeamsAdapter(val context:Context,var lstTeams:MutableList<Team>,var task:S
         holder.tvTeamName.text = team.teamName
         holder.tvAgeGroup.text = team.ageGroup.toString()
         holder.tvPlayers.text = "${team.teamPlayers!!.size}/8"
-        if(team.teamLogo!! == "no-logo.pmg")
+        if(team.teamLogo!! == "no-logo.png")
         {
             holder.ivTeamLogo.setImageResource(R.drawable.logoteam)
         }

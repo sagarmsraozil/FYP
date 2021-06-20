@@ -234,15 +234,18 @@
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textSize="14sp"
-                            android:layout_weight="1"
+                            android:layout_weight="0.3"
                             />
 
                         <TextView
                             android:id="@+id/tvTitleName"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="S1 Legend"
                             android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:gravity="end"
                             android:textColor="@color/black"/>
 
                     </LinearLayout>

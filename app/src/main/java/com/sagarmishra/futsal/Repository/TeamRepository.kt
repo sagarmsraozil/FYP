@@ -5,9 +5,19 @@ import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.api.TeamAPI
 import com.sagarmishra.futsal.entityapi.Battle
 import com.sagarmishra.futsal.response.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 class TeamRepository():ApiRequest() {
     val teamAPI = RetrofitService.retroService(TeamAPI::class.java)
+
+    suspend fun createTeam(teamName:RequestBody,teamTag:RequestBody,locatedCity:RequestBody,ageGroup:RequestBody,contact:RequestBody,teamEmail:RequestBody,citizenShipBack:MultipartBody.Part,citizenShipFront:MultipartBody.Part,ownerPhoto:MultipartBody.Part):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.createATeam(RetrofitService.token!!,teamName,teamTag,locatedCity,ageGroup,contact,teamEmail,citizenShipBack,citizenShipFront,ownerPhoto)
+        }
+    }
+
 
     suspend fun getMyTeam():TeamResponse
     {

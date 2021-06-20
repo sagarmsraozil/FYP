@@ -3,8 +3,10 @@ package com.sagarmishra.futsal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sagarmishra.futsal.Repository.TeamRepository
 import com.sagarmishra.futsal.adapter.TeamsAdapter
 import com.sagarmishra.futsal.entityapi.Team
+import com.sagarmishra.futsal.model.StaticData
 import com.sagarmishra.futsal.utils.snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,11 +22,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class NewTeamActivity : AppCompatActivity() {
+class NewTeamActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var recycler:RecyclerView
     private lateinit var adapter:TeamsAdapter
     private lateinit var tvSearch:AutoCompleteTextView
     private lateinit var tvTeams:TextView
+    private lateinit var btnCreateTeam:Button
     var lstTeams:MutableList<Team> = mutableListOf()
     var status:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +37,7 @@ class NewTeamActivity : AppCompatActivity() {
         binding()
         initialize()
         searchWork()
+        btnCreateTeam.setOnClickListener(this)
     }
 
     private fun binding()
@@ -40,11 +45,20 @@ class NewTeamActivity : AppCompatActivity() {
         recycler = findViewById(R.id.recycler)
         tvSearch = findViewById(R.id.tvSearch)
         tvTeams = findViewById(R.id.tvTeams)
+        btnCreateTeam = findViewById(R.id.btnCreateTeam)
     }
 
     private fun initialize()
     {
         status = intent.getStringExtra("task")
+        if(status == "Join" || StaticData.team == null)
+        {
+            btnCreateTeam.visibility = View.VISIBLE
+        }
+        else
+        {
+            btnCreateTeam.visibility = View.GONE
+        }
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val repo = TeamRepository()
@@ -119,6 +133,24 @@ class NewTeamActivity : AppCompatActivity() {
             intent.putExtra("FRAGMENT_NUMBER",0)
             startActivity(intent)
         }
+        else if(status == "Search")
+        {
+            var intent = Intent(this,MainActivity::class.java)
+            intent.putExtra("FRAGMENT_NUMBER",8)
+            startActivity(intent)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id)
+        {
+            R.id.btnCreateTeam ->{
+                val intent = Intent(this@NewTeamActivity,CreateTeamActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+
     }
 
 

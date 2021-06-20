@@ -82,6 +82,7 @@ class TournamentResultFragment : Fragment() {
                     lstFutsalNameAndTCode.addAll(fName.toMutableList())
                     lstFutsalNameAndTCode.addAll(tCode.toMutableList())
                     lstFutsalNameAndTCode.addAll(container.toMutableSet().toMutableList())
+                    lstFutsalNameAndTCode.remove("Team Genexus")
 
 
                     withContext(Dispatchers.Main)

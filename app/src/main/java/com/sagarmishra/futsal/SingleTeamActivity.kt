@@ -13,6 +13,7 @@ import com.sagarmishra.futsal.Repository.TeamRepository
 import com.sagarmishra.futsal.adapter.PlayerAdapter
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.entityapi.Team
+import com.sagarmishra.futsal.model.StaticData
 import com.sagarmishra.futsal.utils.snackbar
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.coroutines.CoroutineScope
@@ -66,7 +67,7 @@ class SingleTeamActivity : AppCompatActivity(),View.OnClickListener {
 
         status = intent.getStringExtra("task")!!
         tid = intent.getStringExtra("tid")!!
-        if(status != "Join")
+        if(status != "Join" && StaticData.team != null)
         {
             btnReqToJoin.visibility = View.GONE
         }
@@ -82,6 +83,7 @@ class SingleTeamActivity : AppCompatActivity(),View.OnClickListener {
                     {
                         tvTeamName.text = response2.data!!.teamName
                         tvTeamCode.text = response2.data!!.teamCode
+                        tvSeasonCount.text = response2.data!!.teamPlayers!!.size.toString()+"/8"
                         if(response2.data!!.activeTitle != null && response2.data!!.activeTitle != "")
                         {
                             tvTitleName.text = response2.data!!.activeTitle

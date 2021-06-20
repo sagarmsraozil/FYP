@@ -95,6 +95,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
             menu.findItem(R.id.activate).isVisible = false
         }
 
+
+
         //var getPref = getSharedPreferences("credentials",Context.MODE_PRIVATE)
         //Toast.makeText(this@MainActivity, "Username: ${getPref.getString("username","")} and ${getPref.getString("password","")}", Toast.LENGTH_SHORT).show()
     }
@@ -308,6 +310,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
                 horizontalOff()
                 verticalNavView.menu.findItem(R.id.team).isChecked = true
             }
+
 
         }
         drawerLayout.closeDrawer(GravityCompat.START)
