@@ -159,4 +159,14 @@ class TeamRepository():ApiRequest() {
         }
     }
 
+    suspend fun selectTitle(tid:String,selectedTitle:String,changeFor:String):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.selectTitle(
+                RetrofitService.token!!,
+                tid,selectedTitle,changeFor
+            )
+        }
+    }
+
 }

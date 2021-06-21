@@ -27,7 +27,7 @@ data class Team(
     val ownerPhoto:String?=null,
     val status:String?=null,
     val titles:MutableList<String>? = null,
-    val activeTitle:String?=null
+    var activeTitle:String?=null
 ):Parcelable
 {
     constructor(parcel: Parcel) : this(

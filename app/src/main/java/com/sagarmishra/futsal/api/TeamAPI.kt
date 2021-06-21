@@ -155,4 +155,12 @@ interface TeamAPI {
         @Part("tid") tid:RequestBody
     ):Response<GlobalResponse>
 
+    @FormUrlEncoded
+    @PUT("selectTitle")
+    suspend fun selectTitle(
+        @Header("Authorization") token:String,
+        @Field("tid") tid:String,
+        @Field("selectedTitle") selectedTitle:String,
+        @Field("changeFor") changeFor:String
+    ):Response<GlobalResponse>
 }

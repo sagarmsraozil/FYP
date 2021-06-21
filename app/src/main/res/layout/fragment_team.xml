@@ -333,46 +333,80 @@
 
     </LinearLayout>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_search"
-            android:layout_gravity="end"
-            android:layout_marginRight="4dp"
-            android:id="@+id/ivSearch"
-            app:tint="@color/black" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:background="#CECDD1"
-        android:padding="4dp"
-        android:orientation="horizontal"
-        >
+        android:gravity="end"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnBattleLog"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Battle Log"
-            android:backgroundTint="#0273B1"
-            android:layout_weight="1"
-            android:layout_margin="3dp"
-            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_request"
+            android:layout_marginRight="4dp"
+            android:id="@+id/ivRequest"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_tournament_log"
+            android:layout_marginRight="4dp"
+            android:id="@+id/ivTournament"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_crossed"
+            android:layout_marginRight="4dp"
+            android:id="@+id/ivBattle"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_editing"
+            android:layout_marginRight="10dp"
+            android:id="@+id/ivEdit"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_gift"
+            android:layout_marginRight="4dp"
+            android:id="@+id/ivChallenge"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
 
 
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"
+            android:layout_marginRight="10dp"
+            android:id="@+id/ivSearch"
+            android:layout_marginLeft="4dp"
+            android:background="#E6E4E4"
+            android:padding="4dp"
+            app:tint="@color/black" />
 
-        <Button
-            android:id="@+id/btnTournamentLog"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Tournament Log"
-            android:backgroundTint="#303F9F"
-            android:layout_weight="1"
-            android:layout_margin="3dp"
-            />
+
 
 
 
@@ -385,62 +419,37 @@
         android:text="Players"
         android:layout_gravity="center"
         android:textColor="#015380"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:background="#CECDD1"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnRequests"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Requests"
-            android:backgroundTint="#388E3C"
-            android:layout_weight="1"
-            android:layout_margin="3dp"
-            />
-
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Edit"
-            android:backgroundTint="#034D75"
-            android:layout_weight="1"
-            android:layout_margin="3dp"
-
-            />
 
         <Button
             android:id="@+id/btnLeave"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Leave"
             android:backgroundTint="#FD030C"
-            android:layout_weight="1"
+            android:layout_gravity="end"
             android:layout_margin="3dp"
             />
 
         <Button
             android:id="@+id/btnDisband"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Disband"
             android:backgroundTint="#FD030C"
-            android:layout_weight="1"
+            android:layout_gravity="end"
             android:layout_margin="3dp"
             android:visibility="gone"
             />
 
 
-    </LinearLayout>
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -455,7 +464,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:backgroundTint="#689F38"
+        android:backgroundTint="#012335"
         android:text="Search a Match"/>
 
 

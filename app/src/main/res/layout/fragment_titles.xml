@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    tools:context=".fragments.challenges_and_titles.TitlesFragment">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 titles"
+            android:layout_gravity="end"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            android:id="@+id/tvTitles"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/recycler"/>
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Use"
+        android:id="@+id/btnUse"
+        android:layout_gravity="center"
+        android:backgroundTint="#012549"/>
+
+
+
+
+
+
+</LinearLayout>

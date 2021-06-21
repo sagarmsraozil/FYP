@@ -50,10 +50,10 @@
         android:layout_gravity="center"/>
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="end"
-        android:src="@drawable/ic_wine"
+        android:src="@drawable/ic_tournament_log"
         android:layout_marginRight="13dp"
         android:id="@+id/ivTitles"
         app:tint="#FFA000" />

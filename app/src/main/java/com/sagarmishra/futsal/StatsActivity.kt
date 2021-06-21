@@ -1,12 +1,16 @@
 package com.sagarmishra.futsal
 
+import android.app.Dialog
 import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.Legend
@@ -18,6 +22,7 @@ import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Utils
 import com.sagarmishra.futsal.Repository.TeamRepository
+import com.sagarmishra.futsal.adapter.TitleAdapter
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.entityapi.TeamStats
 import com.sagarmishra.futsal.model.StaticData
@@ -28,7 +33,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
+class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener,View.OnClickListener {
     private lateinit var tvTeamName:TextView
     private lateinit var spinner:Spinner
     private lateinit var ivTier:ImageView
@@ -46,13 +51,14 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
     private lateinit var tvRatio:TextView
     private lateinit var lineChart:LineChart
     var tid:String? = null
-
+    var dialog:Dialog? = null
 
     //initialize container to add stats
     var lstStats:MutableList<TeamStats> = mutableListOf()
     var currentSeason :Int = 0
     var seasons:MutableList<Int> = mutableListOf()
     var pointsData:MutableList<Int> = mutableListOf()
+    var titles:MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +66,7 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
         supportActionBar?.hide()
         binding()
         initialize()
-
+        ivTitles.setOnClickListener(this)
     }
 
     private fun binding()
@@ -81,6 +87,31 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
         tvGoalsScored = findViewById(R.id.tvGoalsScored)
         tvRatio = findViewById(R.id.tvRatio)
         lineChart = findViewById(R.id.lineChart)
+
+    }
+
+    private fun makeTierViewer()
+    {
+        dialog = Dialog(this)
+        dialog!!.setContentView(R.layout.dialog_title_viewer)
+        dialog!!.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog!!.setCancelable(false)
+
+        //binding
+        var tvTitles : TextView = dialog!!.findViewById(R.id.tvTitles)
+        var recycler : RecyclerView = dialog!!.findViewById(R.id.recycler)
+        var ivCross : ImageView = dialog!!.findViewById(R.id.ivCross)
+
+        var adapter : TitleAdapter = TitleAdapter(this,titles)
+        tvTitles.text = "${titles.size} titles"
+        recycler.adapter = adapter
+        recycler.layoutManager = LinearLayoutManager(this)
+
+
+        ivCross.setOnClickListener {
+            dialog!!.dismiss()
+        }
+
 
     }
 
@@ -233,6 +264,7 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
                     withContext(Dispatchers.Main)
                     {
                         tvTeamName.text = response.data[0].team_id!!.teamName+"'s Stats"
+                        titles = response.data[0].team_id!!.titles!!
                         var adapter = ArrayAdapter(
                             this@StatsActivity,
                             android.R.layout.simple_expandable_list_item_1,
@@ -240,6 +272,7 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
                         )
                         spinner.adapter = adapter
                         loadData(currentSeason)
+                        makeTierViewer()
                     }
 
                 }
@@ -287,5 +320,14 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener {
 
     override fun onNothingSelected() {
 
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id)
+        {
+            R.id.ivTitles ->{
+                dialog!!.show()
+            }
+        }
     }
 }

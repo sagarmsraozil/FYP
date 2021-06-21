@@ -41,16 +41,17 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
     private lateinit var adapter:PlayerAdapter
     private lateinit var btnLeave : Button
     private lateinit var btnDisband:Button
-    private lateinit var btnBattleLog:Button
-    private lateinit var btnTournamentLog:Button
     private lateinit var swipe:SwipeRefreshLayout
     private lateinit var btnStats:Button
     private lateinit var btnSearchMatch:Button
-    private lateinit var btnRequests:Button
     private lateinit var tvSeasonPoint:TextView
     private lateinit var ivSearch:ImageView
     private lateinit var tvStatus:TextView
-    private lateinit var btnEdit:Button
+    private lateinit var ivRequest:ImageView
+    private lateinit var ivTournament:ImageView
+    private lateinit var ivBattle:ImageView
+    private lateinit var ivEdit:ImageView
+    private lateinit var ivChallenge:ImageView
     var lstPlayers:MutableList<AuthUser> = mutableListOf()
     var teamId:String = ""
 
@@ -79,30 +80,32 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
         recycler = v!!.findViewById(R.id.recycler)
         btnLeave = v!!.findViewById(R.id.btnLeave)
         btnDisband = v!!.findViewById(R.id.btnDisband)
-        btnBattleLog = v!!.findViewById(R.id.btnBattleLog)
-        btnTournamentLog = v!!.findViewById(R.id.btnTournamentLog)
         swipe = v!!.findViewById(R.id.swipe)
         btnStats = v!!.findViewById(R.id.btnStats)
         btnSearchMatch = v!!.findViewById(R.id.btnSearchMatch)
-        btnRequests = v!!.findViewById(R.id.btnRequests)
         tvSeasonPoint = v!!.findViewById(R.id.tvSeasonPoint)
         ivSearch = v!!.findViewById(R.id.ivSearch)
         tvStatus = v!!.findViewById(R.id.tvStatus)
-        btnEdit = v!!.findViewById(R.id.btnEdit)
+        ivRequest = v!!.findViewById(R.id.ivRequest)
+        ivTournament = v!!.findViewById(R.id.ivTournament)
+        ivBattle = v!!.findViewById(R.id.ivBattle)
+        ivEdit = v!!.findViewById(R.id.ivEdit)
+        ivChallenge = v!!.findViewById(R.id.ivChallenge)
     }
 
     private fun listeners()
     {
         btnDisband.setOnClickListener(this)
         btnLeave.setOnClickListener(this)
-        btnBattleLog.setOnClickListener(this)
-        btnTournamentLog.setOnClickListener(this)
         swipe.setOnRefreshListener(this)
         btnStats.setOnClickListener(this)
         btnSearchMatch.setOnClickListener(this)
-        btnRequests.setOnClickListener(this)
         ivSearch.setOnClickListener(this)
-        btnEdit.setOnClickListener(this)
+        ivTournament.setOnClickListener(this)
+        ivBattle.setOnClickListener(this)
+        ivRequest.setOnClickListener(this)
+        ivEdit.setOnClickListener(this)
+        ivChallenge.setOnClickListener(this)
     }
 
     private fun initialize()
@@ -162,12 +165,14 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                         if(StaticData.team!!.status == "Approved" && (StaticData.team!!.teamOwner == StaticData.user!!._id || (StaticData.team!!.teamColeader != null && StaticData.team!!.teamColeader == StaticData.user!!._id)))
                         {
                             btnSearchMatch.isEnabled = true
-                            btnEdit.visibility = View.VISIBLE
+                            ivEdit.visibility = View.VISIBLE
+                            ivRequest.visibility = View.VISIBLE
                         }
                         else
                         {
                             btnSearchMatch.isEnabled = false
-                            btnEdit.visibility = View.GONE
+                            ivEdit.visibility = View.GONE
+                            ivRequest.visibility = View.GONE
                         }
                     }
 
@@ -320,11 +325,11 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
             R.id.btnLeave ->{
                 alert("Leave Team","Do you really want to leave this team?","Leave")
             }
-            R.id.btnBattleLog ->{
+            R.id.ivBattle ->{
                 val intent = Intent(requireContext(),BattleLogActivity::class.java)
                 startActivity(intent)
             }
-            R.id.btnTournamentLog ->{
+            R.id.ivTournament ->{
                 val intent = Intent(requireContext(),TournamentActivity::class.java)
                 startActivity(intent)
             }
@@ -337,7 +342,7 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                 val intent = Intent(requireContext(),SearchMatchActivity::class.java)
                 startActivity(intent)
             }
-            R.id.btnRequests ->{
+            R.id.ivRequest ->{
                 val intent = Intent(requireContext(),RequestsActivity::class.java)
                 startActivity(intent)
             }
@@ -347,8 +352,12 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                 startActivity(intent)
 
             }
-            R.id.btnEdit->{
+            R.id.ivEdit->{
                 val intent = Intent(requireContext(),EditTeamDetailsActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.ivChallenge ->{
+                val intent = Intent(requireContext(),ChallengeActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -24,6 +24,7 @@ object StaticData {
     var deletableBattle:MutableList<String>?= mutableListOf()
     var tournamentHistory:MutableMap<String,Any>? = mutableMapOf()
 
+
     fun makeDateAndTime():MutableList<DateAndTime>
     {
         var dateAndTime : MutableList<DateAndTime> = mutableListOf()
