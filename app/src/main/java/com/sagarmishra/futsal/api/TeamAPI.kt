@@ -163,4 +163,28 @@ interface TeamAPI {
         @Field("selectedTitle") selectedTitle:String,
         @Field("changeFor") changeFor:String
     ):Response<GlobalResponse>
+
+    @GET("myTeamChallenges")
+    suspend fun teamChallenges(
+        @Header("Authorization") token:String
+    ):Response<TeamChallengeResponse>
+
+    @FormUrlEncoded
+    @POST("addTitleFromChallenge")
+    suspend fun addTitleFromChallenge(
+        @Header("Authorization") token:String,
+        @Field("challengeId") cid:String
+    ):Response<GlobalResponse>
+
+    @GET("getTopRankers")
+    suspend fun topRankers(
+        @Header("Authorization") token:String
+    ):Response<TopRankerResponse>
+
+
+    @POST("addTitles/{tid}")
+    suspend fun addTitle(
+        @Header("Authorization") token:String,
+        @Path("tid") tid:String
+    ):Response<GlobalResponse>
 }

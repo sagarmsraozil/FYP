@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Futsal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChallengeActivity"></activity>
+        <activity android:name=".TopRankerActivity"></activity>
+        <activity android:name=".ChallengeActivity" />
         <activity android:name=".EditTeamDetailsActivity" />
         <activity android:name=".CreateTeamActivity" />
         <activity android:name=".AddBattleActivity" />

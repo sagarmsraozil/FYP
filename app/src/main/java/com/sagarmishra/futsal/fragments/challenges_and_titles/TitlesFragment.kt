@@ -30,6 +30,8 @@ class TitlesFragment : Fragment(),RadioRefresh,View.OnClickListener {
     private lateinit var adapter:TitleSetAdapter
     private lateinit var tvTitles: TextView
     private lateinit var btnUse:Button
+    private lateinit var tvTier:TextView
+    private lateinit var tvCollectTitles:TextView
     var titles:MutableList<String> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,12 +42,23 @@ class TitlesFragment : Fragment(),RadioRefresh,View.OnClickListener {
         recycler = view.findViewById(R.id.recycler)
         tvTitles = view.findViewById(R.id.tvTitles)
         btnUse = view.findViewById(R.id.btnUse)
+        tvTier = view.findViewById(R.id.tvTier)
+        tvCollectTitles  = view.findViewById(R.id.tvCollectTitles)
         btnUse.setOnClickListener(this)
+        tvCollectTitles.setOnClickListener(this)
         tvTitles.text = "${StaticData.team!!.titles!!.size} titles"
         titles = StaticData.team!!.titles!!.map{
             it
         }.toMutableList()
         titles.add(0,"")
+        if(StaticData.matchPlayed == "Zero")
+        {
+            tvTier.text = "Current Tier: ${StaticData.myTier}"
+        }
+        else
+        {
+            tvTier.text = "Current Tier: ${StaticData.myTier}(${StaticData.matchPlayed}/5)"
+        }
 
 
         if(StaticData.team!!.titles!!.size > 0)
@@ -58,6 +71,15 @@ class TitlesFragment : Fragment(),RadioRefresh,View.OnClickListener {
         else
         {
             btnUse.visibility = View.GONE
+        }
+
+        if(StaticData.titleReceiveCount > 0)
+        {
+            tvCollectTitles.visibility = View.VISIBLE
+        }
+        else
+        {
+            tvCollectTitles.visibility = View.GONE
         }
 
         return view
@@ -105,6 +127,41 @@ class TitlesFragment : Fragment(),RadioRefresh,View.OnClickListener {
                         }
                     }
                }
+           }
+
+           R.id.tvCollectTitles ->{
+                CoroutineScope(Dispatchers.IO).launch {
+                    try {
+                        val repo = TeamRepository()
+                        val response = repo.collectTitle(StaticData.team!!._id)
+                        if(response.success == true)
+                        {
+                            withContext(Dispatchers.Main)
+                            {
+                                btnUse.snackbar(response.message!!)
+                                var intent = Intent(requireContext(),MainActivity::class.java)
+                                intent.putExtra("FRAGMENT_NUMBER",8)
+                                startActivity(intent)
+                            }
+                        }
+                        else
+                        {
+                            withContext(Dispatchers.Main)
+                            {
+                                btnUse.snackbar(response.message!!)
+                            }
+                        }
+                    }
+                    catch(err:Exception)
+                    {
+                        println(err.printStackTrace())
+                        withContext(Dispatchers.Main)
+                        {
+                            btnUse.snackbar("Server Error!!")
+                        }
+                    }
+
+                }
            }
        }
     }

@@ -51,7 +51,7 @@
                 android:textStyle="bold"
                 android:elevation="5dp"
                 android:textAlignment="center"
-                android:background="#FF68A3"
+                android:background="#033668"
                 android:layout_weight="1"/>
 
         </LinearLayout>

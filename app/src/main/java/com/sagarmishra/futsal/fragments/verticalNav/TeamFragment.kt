@@ -156,7 +156,9 @@ class TeamFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.OnRefres
                             var imgPath = RetrofitService.loadImagePath()+response.data!!.teamLogo!!.replace("\\","/")
                             Glide.with(requireContext()).load(imgPath).into(ivLogo)
                         }
-
+                        StaticData.myTier = response.tierName!!
+                        StaticData.matchPlayed = response.tierData!!
+                        StaticData.titleReceiveCount = response.count
                         adapter = PlayerAdapter(requireContext(),lstPlayers,response.data!!,"team")
                         recycler.adapter = adapter
                         recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)

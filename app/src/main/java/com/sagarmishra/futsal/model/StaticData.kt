@@ -23,6 +23,9 @@ object StaticData {
     var resultBattles:MutableList<Battle>? = mutableListOf()
     var deletableBattle:MutableList<String>?= mutableListOf()
     var tournamentHistory:MutableMap<String,Any>? = mutableMapOf()
+    var myTier:String = ""
+    var matchPlayed:String = ""
+    var titleReceiveCount:Int = 0
 
 
     fun makeDateAndTime():MutableList<DateAndTime>

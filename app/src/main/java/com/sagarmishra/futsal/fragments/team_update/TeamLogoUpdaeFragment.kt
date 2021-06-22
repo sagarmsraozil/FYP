@@ -12,9 +12,11 @@ import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Button
 import android.widget.PopupMenu
+import com.bumptech.glide.Glide
 import com.sagarmishra.futsal.MainActivity
 import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.Repository.TeamRepository
+import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.model.StaticData
 import com.sagarmishra.futsal.utils.snackbar
 import de.hdodenhof.circleimageview.CircleImageView
@@ -44,6 +46,15 @@ class TeamLogoUpdaeFragment : Fragment(),View.OnClickListener {
         btnChange = view.findViewById(R.id.btnChange)
         cvLogo.setOnClickListener(this)
         btnChange.setOnClickListener(this)
+        if(StaticData.team!!.teamLogo == "no-logo.png")
+        {
+            cvLogo.setImageResource(R.drawable.logoteam)
+        }
+        else
+        {
+            var imgPath = RetrofitService.loadImagePath()+StaticData.team!!.teamLogo!!.replace("\\","/")
+            Glide.with(requireContext()).load(imgPath).into(cvLogo)
+        }
         return view
     }
 

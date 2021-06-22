@@ -14,4 +14,6 @@
     <string name="navigation_drawer_open"> Open navigation drawer </string>
     <string name="navigation_drawer_close"> Close navigation drawer </string>
     <string name="activation"> <u> Activation Code Here </u> </string>
+    <string name="topRanker"> <u> Top Rankers </u> </string>
+    <string name="titles"> <u> Collect Titles </u> </string>
 </resources>

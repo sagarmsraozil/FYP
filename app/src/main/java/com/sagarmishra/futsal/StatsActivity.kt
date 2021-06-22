@@ -101,6 +101,9 @@ class StatsActivity : AppCompatActivity(),OnChartValueSelectedListener,View.OnCl
         var tvTitles : TextView = dialog!!.findViewById(R.id.tvTitles)
         var recycler : RecyclerView = dialog!!.findViewById(R.id.recycler)
         var ivCross : ImageView = dialog!!.findViewById(R.id.ivCross)
+        var btnSelect:Button = dialog!!.findViewById(R.id.btnSelect)
+
+        btnSelect.visibility = View.GONE
 
         var adapter : TitleAdapter = TitleAdapter(this,titles)
         tvTitles.text = "${titles.size} titles"

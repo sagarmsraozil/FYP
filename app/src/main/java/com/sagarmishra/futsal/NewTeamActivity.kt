@@ -28,6 +28,7 @@ class NewTeamActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var tvSearch:AutoCompleteTextView
     private lateinit var tvTeams:TextView
     private lateinit var btnCreateTeam:Button
+    private lateinit var tvTopRanker:TextView
     var lstTeams:MutableList<Team> = mutableListOf()
     var status:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,7 @@ class NewTeamActivity : AppCompatActivity(),View.OnClickListener {
         initialize()
         searchWork()
         btnCreateTeam.setOnClickListener(this)
+        tvTopRanker.setOnClickListener(this)
     }
 
     private fun binding()
@@ -46,6 +48,7 @@ class NewTeamActivity : AppCompatActivity(),View.OnClickListener {
         tvSearch = findViewById(R.id.tvSearch)
         tvTeams = findViewById(R.id.tvTeams)
         btnCreateTeam = findViewById(R.id.btnCreateTeam)
+        tvTopRanker = findViewById(R.id.tvTopRanker)
     }
 
     private fun initialize()
@@ -146,6 +149,12 @@ class NewTeamActivity : AppCompatActivity(),View.OnClickListener {
         {
             R.id.btnCreateTeam ->{
                 val intent = Intent(this@NewTeamActivity,CreateTeamActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            R.id.tvTopRanker ->{
+                val intent = Intent(this,TopRankerActivity::class.java)
                 startActivity(intent)
                 finish()
             }

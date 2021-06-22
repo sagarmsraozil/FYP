@@ -169,4 +169,32 @@ class TeamRepository():ApiRequest() {
         }
     }
 
+    suspend fun teamChallenges():TeamChallengeResponse
+    {
+        return apiRequest {
+            teamAPI.teamChallenges(RetrofitService.token!!)
+        }
+    }
+
+    suspend fun addTitleFromChallenge(cid:String):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.addTitleFromChallenge(RetrofitService.token!!,cid)
+        }
+    }
+
+    suspend fun topRankers():TopRankerResponse
+    {
+        return apiRequest {
+            teamAPI.topRankers(RetrofitService.token!!)
+        }
+    }
+
+    suspend fun collectTitle(tid:String):GlobalResponse
+    {
+        return apiRequest {
+            teamAPI.addTitle(RetrofitService.token!!,tid)
+        }
+    }
+
 }

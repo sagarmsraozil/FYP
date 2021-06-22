@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_military"
+            android:scaleType="fitXY"
+            app:tint="#F57C00" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Win 20 games."
+            android:layout_weight="1"
+            android:textAlignment="textStart"
+            android:textStyle="bold"
+            android:textColor="#052E57"
+            android:textSize="16sp"
+            android:id="@+id/tvChallenge"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title Reward: Berserkers"
+        android:textStyle="bold"
+        android:textColor="#f33066"
+        android:layout_marginLeft="15dp"
+        android:textSize="15sp"
+        android:id="@+id/titleReward"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:max="0"
+        android:progress="0"
+        android:progressTint="#367102"
+        android:id="@+id/progress"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="end"
+        android:layout_marginRight="4dp"
+        android:id="@+id/tvRange"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FA9D00"
+        android:text="Collect"
+        android:layout_gravity="end"
+        android:layout_marginRight="4dp"
+        android:enabled="false"
+        android:id="@+id/btnCollect"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#014281"
+        android:text="Collect"
+        android:layout_gravity="end"
+        android:layout_marginRight="4dp"
+        android:visibility="gone"
+        android:id="@+id/btnCollect1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B8F0F"
+        android:text="Collected"
+        android:layout_gravity="end"
+        android:layout_marginRight="4dp"
+        android:visibility="gone"
+        android:id="@+id/btnCollect2"/>
+
+
+
+</LinearLayout>

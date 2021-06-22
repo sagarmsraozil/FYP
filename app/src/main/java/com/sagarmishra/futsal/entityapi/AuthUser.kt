@@ -20,5 +20,6 @@ data class AuthUser(
        var profilePicture:String?=null,
        var account_activation:Boolean = false,
        var dots:Int = 0,
-       var activeTitle:String?=null
+       var activeTitle:String?=null,
+       var titles:MutableList<String>? = null
 )

@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sagarmishra.futsal.Repository.TeamRepository
 import com.sagarmishra.futsal.adapter.MatchMakingAdapter
@@ -90,7 +91,7 @@ class SearchMatchActivity : AppCompatActivity(),View.OnClickListener {
                         tvFetchedBy.text = fetchBy
                         adapter = MatchMakingAdapter(this@SearchMatchActivity,lstOpponents)
                         recycler.adapter = adapter
-                        recycler.layoutManager= GridLayoutManager(this@SearchMatchActivity,1,GridLayoutManager.HORIZONTAL,false)
+                        recycler.layoutManager= LinearLayoutManager(this@SearchMatchActivity,LinearLayoutManager.HORIZONTAL,false)
 
                         futsalAdapter = NearbyFutsalAdapter(this@SearchMatchActivity,lstFutsals)
                         recyclerFutsal.adapter = futsalAdapter
