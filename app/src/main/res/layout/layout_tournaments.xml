@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="6dp"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:padding="6dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logoteam"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opening Soon"
+        android:layout_gravity="end"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:elevation="4dp"
+        android:background="#f33066"
+        android:padding="3dp"
+        android:id="@+id/tvStatus"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Futsal Arena Championship"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tvTournamentName"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Participation: 20 Jun,2021-Sunday-23 Jun,2021-Wednesday"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tvParticipation"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Age Group: 16-22"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:id="@+id/tvAgeGroup"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Participation Count: 5/16"
+            android:textColor="@color/black"
+            android:gravity="end"
+            android:textSize="13sp"
+            android:id="@+id/tvParticipationCount"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Date: 20 Jun,2021-Sunday-23 Jun,2021-Wednesday"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tvEventDate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Iteration: 1"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tvMatchIteration"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tournament Code: mhlsss"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:id="@+id/tvTournamentCode"/>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Tournament Format: League+Knockout"
+        android:textColor="@color/black"
+        android:gravity="end"
+        android:textSize="13sp"
+        android:id="@+id/tvTournamentFormat"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PrizePool"
+        android:textSize="13sp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Sagar\nSagar"
+        android:id="@+id/tvPrize"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Sponsors: Red Bull, Wai Wai, CocaCola"
+        android:textColor="@color/black"
+        android:gravity="end"
+        android:textSize="13sp"
+        android:id="@+id/tvSponsors"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Organized By: Red Bull, Wai Wai, CocaCola"
+        android:textColor="@color/black"
+        android:gravity="end"
+        android:textSize="13sp"
+        android:layout_gravity="center"
+        android:id="@+id/tvOrganizedBy"/>
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#013A59"
+        android:text="View Details"
+        android:elevation="4dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/btnView"/>
+
+
+
+</LinearLayout>

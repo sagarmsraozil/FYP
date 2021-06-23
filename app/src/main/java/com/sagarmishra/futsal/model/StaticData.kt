@@ -26,6 +26,7 @@ object StaticData {
     var myTier:String = ""
     var matchPlayed:String = ""
     var titleReceiveCount:Int = 0
+    var tournamentId:String = ""
 
 
     fun makeDateAndTime():MutableList<DateAndTime>

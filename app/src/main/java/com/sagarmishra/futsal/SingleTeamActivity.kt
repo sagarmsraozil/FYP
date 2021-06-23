@@ -67,10 +67,12 @@ class SingleTeamActivity : AppCompatActivity(),View.OnClickListener {
 
         status = intent.getStringExtra("task")!!
         tid = intent.getStringExtra("tid")!!
-        if(status != "Join" && StaticData.team != null)
+        if(status != "Join" && (StaticData.team != null || status == "TournamentSearch"))
         {
             btnReqToJoin.visibility = View.GONE
         }
+
+
 
         CoroutineScope(Dispatchers.IO).launch {
             try {

@@ -29,5 +29,6 @@ data class Tournament(
     var organizedBy:String?=null,
     var organizerDetail:String?=null,
     var tournamentCode:String?=null,
-    var titleProvided:Boolean?=null
+    var titleProvided:Boolean?=null,
+    var grpMatchPhase:Int = 0
 )

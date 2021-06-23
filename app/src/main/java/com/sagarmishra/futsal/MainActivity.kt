@@ -26,10 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.sagarmishra.futsal.Permissions.Logout
 import com.sagarmishra.futsal.fragments.*
-import com.sagarmishra.futsal.fragments.verticalNav.ActivationFragment
-import com.sagarmishra.futsal.fragments.verticalNav.GiveawayFragment
-import com.sagarmishra.futsal.fragments.verticalNav.TeamFragment
-import com.sagarmishra.futsal.fragments.verticalNav.UserPointsFragment
+import com.sagarmishra.futsal.fragments.verticalNav.*
 import com.sagarmishra.futsal.model.StaticData
 import com.sagarmishra.futsal.notification.NotificationSender
 import com.sagarmishra.futsal.utils.snackbar
@@ -41,9 +38,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
     private lateinit var verticalNavView : NavigationView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     var selected = R.id.nav_home
-    var myFrags:MutableList<Fragment> = mutableListOf(HomeFragment(),TournamentFragment(),ChatFragment(),MyBookingsFragment(),AccountFragment(),ActivationFragment(),GiveawayFragment(),UserPointsFragment(),TeamFragment()
+    var myFrags:MutableList<Fragment> = mutableListOf(HomeFragment(),TournamentFragment(),ChatFragment(),MyBookingsFragment(),AccountFragment(),ActivationFragment(),GiveawayFragment(),UserPointsFragment(),TeamFragment(),TournamentsFragment()
     )
-    var navChangings:MutableList<Int> = mutableListOf(R.id.nav_home,R.id.nav_tournament,R.id.nav_chats,R.id.nav_bookings,R.id.nav_account,R.id.activate,R.id.giveaway,R.id.warning,R.id.team)
+    var navChangings:MutableList<Int> = mutableListOf(R.id.nav_home,R.id.nav_tournament,R.id.nav_chats,R.id.nav_bookings,R.id.nav_account,R.id.activate,R.id.giveaway,R.id.warning,R.id.team,R.id.tournament)
     private lateinit var sensorManager:SensorManager
     private var sensor:Sensor?=null
     private var sensor2:Sensor?=null
@@ -309,6 +306,12 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
                 selected = R.id.team
                 horizontalOff()
                 verticalNavView.menu.findItem(R.id.team).isChecked = true
+            }
+            R.id.tournament ->{
+                openFragment(TournamentsFragment())
+                selected = R.id.tournament
+                horizontalOff()
+                verticalNavView.menu.findItem(R.id.tournament).isChecked = true
             }
 
 

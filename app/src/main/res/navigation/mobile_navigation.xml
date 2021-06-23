@@ -49,4 +49,9 @@
         android:id="@+id/team"
         android:name="com.sagarmishra.futsal.fragments.verticalNav.TeamFragment"
         android:label="TeamFragment" />
+    <fragment
+        android:id="@+id/tournament"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.TournamentsFragment"
+        android:label="fragment_tournaments"
+        tools:layout="@layout/fragment_tournaments" />
 </navigation>
