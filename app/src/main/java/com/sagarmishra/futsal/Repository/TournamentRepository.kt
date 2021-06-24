@@ -65,4 +65,18 @@ class TournamentRepository():ApiRequest() {
             tournamentAPI.teamPerformance(tournamentId,teamId)
         }
     }
+
+    suspend fun roundsDeclaration(tid:String):TournamentStructureResponse
+    {
+        return apiRequest {
+            tournamentAPI.roundsClarification(tid)
+        }
+    }
+
+    suspend fun groupPoints(tid:String):GroupPointsResponse
+    {
+        return apiRequest {
+            tournamentAPI.pointTable(tid)
+        }
+    }
 }

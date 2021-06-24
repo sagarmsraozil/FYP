@@ -1,14 +1,424 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="4dp"
+    android:padding="3dp"
     tools:context=".fragments.tournament_screens.RoundsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+    >
+        <LinearLayout
+            android:id="@+id/layoutLeague"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
 
-</FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Groups Point Table"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/tvGroup"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="League Point Table"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:id="@+id/tvLeague"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Swipe right or left to view other groups"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:id="@+id/recycler"/>
+
+
+        </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/round1"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="6dp"
+        android:padding="6dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Round 1"
+            android:drawableRight="@drawable/ic_down"
+            android:drawableTint="@color/white"
+            android:drawablePadding="5sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="#0288D1"
+            android:textAlignment="center"
+            android:elevation="5dp"
+            android:layout_gravity="center"
+            android:id="@+id/Round1"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teams"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:elevation="5dp"
+            android:id="@+id/tvTeams1"
+            android:textStyle="bold"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/round2"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 2"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round2"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams2"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round3"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 3"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round3"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams3"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round4"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 4"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round4"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams4"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round5"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 5"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round5"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams5"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round6"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 6"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round6"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams6"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round7"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 7"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round7"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams7"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/round8"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round 8"
+                android:drawableRight="@drawable/ic_down"
+                android:drawableTint="@color/white"
+                android:drawablePadding="5sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#0288D1"
+                android:textAlignment="center"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/Round8"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:id="@+id/tvTeams8"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+</ScrollView>

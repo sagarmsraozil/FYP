@@ -70,7 +70,7 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
         vpAdapter = SingleTournamentFragmentAdapter(supportFragmentManager,lifecycle,titleAndFragment.values.toMutableList())
         vp.adapter = vpAdapter
 
-        vp.isUserInputEnabled = true
+        vp.isUserInputEnabled = false
         TabLayoutMediator(tabLayout,vp)
         { tab: TabLayout.Tab, i: Int ->
             tab.text = titleAndFragment.keys.toMutableList()[i]

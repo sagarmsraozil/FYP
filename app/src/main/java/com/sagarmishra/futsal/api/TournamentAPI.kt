@@ -48,4 +48,15 @@ interface TournamentAPI {
         @Path("tournamentId") tid:String,
         @Path("teamId") teamId:String
     ):Response<TournamentPerformanceResponse>
+
+    @GET("roundsClarification/{tid}")
+    suspend fun roundsClarification(
+        @Path("tid") tid:String
+    ):Response<TournamentStructureResponse>
+
+    @GET("tournamentPointTable/{tid}")
+    suspend fun pointTable(
+        @Path("tid") tid:String
+    ):Response<GroupPointsResponse>
+
 }
