@@ -80,7 +80,7 @@ class BattleResultFragment : Fragment() {
             adapter.notifyDataSetChanged()
             if(text!!.toString().length > 0)
             {
-                tvResults.text = "${searchData.size} results"
+                tvResults.text = "${searchData.size} results found"
             }
             else
             {

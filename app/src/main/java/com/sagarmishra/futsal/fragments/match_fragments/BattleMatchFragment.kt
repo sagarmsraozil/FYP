@@ -143,7 +143,7 @@ class BattleMatchFragment : Fragment(),View.OnClickListener {
 
             if(text.toString().length > 0)
             {
-                tvMatches.text = "${searchData.size} Matches on pending."
+                tvMatches.text = "${searchData.size} Matches found"
             }
             else
             {

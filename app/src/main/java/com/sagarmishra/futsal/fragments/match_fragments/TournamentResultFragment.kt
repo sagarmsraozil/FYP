@@ -136,7 +136,7 @@ class TournamentResultFragment : Fragment() {
 
             if(text.toString().length > 0)
             {
-                tvRecord.text = "${searchRecords.size} records"
+                tvRecord.text = "${searchRecords.size} records found"
             }
             else
             {

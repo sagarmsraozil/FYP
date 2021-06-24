@@ -72,7 +72,7 @@ class TournamentMatchFragment : Fragment() {
                     lstFutsalNameAndTCode.addAll(lstFName.toMutableList())
                     lstFutsalNameAndTCode.addAll(lstTCode.toMutableList())
                     lstFutsalNameAndTCode.addAll(container.toMutableSet().toMutableList())
-
+                    lstFutsalNameAndTCode.remove("Team Genexus")
 
                     withContext(Dispatchers.Main)
                     {
@@ -118,7 +118,7 @@ class TournamentMatchFragment : Fragment() {
 
             if(text.toString().length > 0)
             {
-                tvRecord.text = "${searchRecords.size} records"
+                tvRecord.text = "${searchRecords.size} records found"
             }
             else
             {

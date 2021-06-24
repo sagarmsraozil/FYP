@@ -127,6 +127,7 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
             dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
             dialog.setCancelable(false)
 
+
             //binding
             var tvMatch:TextView = dialog.findViewById(R.id.tvMatch)
             var ivCross:ImageView = dialog.findViewById(R.id.ivCross)
@@ -137,7 +138,7 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
             var team1GoalsS:TextView = dialog.findViewById(R.id.team1GoalsS)
             var team2GoalsS:TextView = dialog.findViewById(R.id.team2GoalsS)
             var team1GoalsC:TextView = dialog.findViewById(R.id.team1GoalsC)
-            var team2GoalsC:TextView = dialog.findViewById(R.id.team2GoalsS)
+            var team2GoalsC:TextView = dialog.findViewById(R.id.team2GoalsC)
             var team1Win:TextView = dialog.findViewById(R.id.team1Win)
             var team2Win:TextView = dialog.findViewById(R.id.team2Win)
             var team1Draw:TextView = dialog.findViewById(R.id.team1Draw)
@@ -177,7 +178,7 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
             team1Ratio.text = teamP1.ratio.toString()
             team2Ratio.text = teamP2.ratio.toString()
 
-            if(match.analysis == true)
+            if(match.analysisStatus == "Analyzed")
             {
                 predictionLayout.visibility = View.VISIBLE
                 win1.text = match.win1.toString()+"%"
