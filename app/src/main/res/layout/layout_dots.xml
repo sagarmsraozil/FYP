@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+        android:layout_marginTop="4dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:elevation="7dp"
+        android:padding="5dp"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/tvSN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvFutsal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barcelona Futsal"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21,JUN 2021"
+                android:textColor="@color/black"
+
+                android:textSize="15sp"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10AM-11AM"
+                android:textColor="@color/black"
+
+                android:textSize="15sp"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 1200"
+                android:textColor="@color/black"
+
+                android:textSize="15sp"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+
+        </TableRow>
+
+
+
+    </TableLayout>

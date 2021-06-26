@@ -46,6 +46,8 @@ class RoundsFragment : Fragment(),View.OnClickListener {
     private lateinit var tvGroup:TextView
     private lateinit var tvLeague:TextView
     private lateinit var adapter:GroupPointAdapter
+    private lateinit var tvInfo:TextView
+    private lateinit var layoutOverall:LinearLayout
 
     var roundsDeclaration:MutableMap<String,Boolean> = mutableMapOf()
     var tournamentStructure: MutableList<TournamentStructure> = mutableListOf()
@@ -77,6 +79,8 @@ class RoundsFragment : Fragment(),View.OnClickListener {
         tvTeams8 = view.findViewById(R.id.tvTeams8)
         tvGroup = view.findViewById(R.id.tvGroup)
         tvLeague = view.findViewById(R.id.tvLeague)
+        tvInfo = view.findViewById(R.id.tvInfo)
+        layoutOverall = view.findViewById(R.id.layoutOverall)
 
         layouts = mutableListOf(layoutLeague,round1,round2,round3,round4,round5,round6,round7,round8,layoutLeague)
 
@@ -119,68 +123,78 @@ class RoundsFragment : Fragment(),View.OnClickListener {
 
     private fun loadData()
     {
-          var structureData = tournamentStructure[0]
-
-          for(i in roundsDeclaration.keys)
-          {
-              if(i.startsWith("round"))
-              {
-                  var index = roundsDeclaration.keys.indexOf(i)
-                  if(roundsDeclaration[i] == true)
-                  {
-                      layouts[index].visibility = View.VISIBLE
-
-                  }
-                  else
-                  {
-                      layouts[index].visibility = View.GONE
-                  }
-              }
-
-          }
-
-        tvTeams1.text = structureData.round1!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams2.text = structureData.round2!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams3.text = structureData.round3!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams4.text = structureData.round4!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams5.text= structureData.round5!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams6.text = structureData.round6!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams7.text = structureData.round7!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-        tvTeams8.text= structureData.round8!!.map {
-            it.teamName+"(${it.teamTag})"
-        }.joinToString("\n")
-
-        if(roundsDeclaration["groupDivision"] == true)
+        if(roundsDeclaration.values.contains(true))
         {
-            layoutLeague.visibility = View.VISIBLE
-            tvGroup.visibility = View.VISIBLE
-            tvLeague.visibility = View.GONE
-            checkPoints()
-        }
-        else if(roundsDeclaration["phase1"] == true)
-        {
-            layoutLeague.visibility = View.VISIBLE
-            tvGroup.visibility = View.GONE
-            tvLeague.visibility = View.VISIBLE
-            checkPoints()
+            layoutOverall.visibility = View.VISIBLE
+            tvInfo.visibility = View.GONE
+            var structureData = tournamentStructure[0]
+
+            for(i in roundsDeclaration.keys)
+            {
+                if(i.startsWith("round"))
+                {
+                    var index = roundsDeclaration.keys.indexOf(i)
+                    if(roundsDeclaration[i] == true)
+                    {
+                        layouts[index].visibility = View.VISIBLE
+
+                    }
+                    else
+                    {
+                        layouts[index].visibility = View.GONE
+                    }
+                }
+
+            }
+
+            tvTeams1.text = structureData.round1!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams2.text = structureData.round2!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams3.text = structureData.round3!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams4.text = structureData.round4!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams5.text= structureData.round5!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams6.text = structureData.round6!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams7.text = structureData.round7!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+            tvTeams8.text= structureData.round8!!.map {
+                it.teamName+"(${it.teamTag})"
+            }.joinToString("\n")
+
+            if(roundsDeclaration["groupDivision"] == true)
+            {
+                layoutLeague.visibility = View.VISIBLE
+                tvGroup.visibility = View.VISIBLE
+                tvLeague.visibility = View.GONE
+                checkPoints()
+            }
+            else if(roundsDeclaration["phase1"] == true)
+            {
+                layoutLeague.visibility = View.VISIBLE
+                tvGroup.visibility = View.GONE
+                tvLeague.visibility = View.VISIBLE
+                checkPoints()
+            }
+            else
+            {
+                layoutLeague.visibility = View.GONE
+            }
         }
         else
         {
-            layoutLeague.visibility = View.GONE
+            layoutOverall.visibility = View.GONE
+            tvInfo.visibility = View.VISIBLE
         }
     }
 
@@ -203,10 +217,7 @@ class RoundsFragment : Fragment(),View.OnClickListener {
                 }
                 else
                 {
-                    withContext(Dispatchers.Main)
-                    {
-                        recycler.snackbar("${response.message}")
-                    }
+                    println(response.message!!)
                 }
             }
             catch (err:Exception)

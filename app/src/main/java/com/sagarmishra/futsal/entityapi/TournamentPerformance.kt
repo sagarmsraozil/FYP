@@ -18,5 +18,5 @@ data class TournamentPerformance(
     val lossPercent:Int = 0,
     val goalsScored:Int = 0,
     val goalsConceaded:Int = 0,
-    val ratio:Int = 0
+    val ratio:Double = 0.0
 )

@@ -110,4 +110,11 @@ class UserRepository():ApiRequest() {
             authService.getPoints(RetrofitService.token!!)
         }
     }
+
+    suspend fun dotsPricing():DotsPricingResponse
+    {
+        return apiRequest {
+            authService.dotsPayment(RetrofitService.token!!)
+        }
+    }
 }

@@ -16,4 +16,5 @@
     <string name="activation"> <u> Activation Code Here </u> </string>
     <string name="topRanker"> <u> Top Rankers </u> </string>
     <string name="titles"> <u> Collect Titles </u> </string>
+    <string name="dotPricing"> <u> View </u> </string>
 </resources>

@@ -105,7 +105,7 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
                     }
                     if(response2.success == true)
                     {
-                        teamP2 = response.data!!
+                        teamP2 = response2.data!!
                     }
                     else
                     {

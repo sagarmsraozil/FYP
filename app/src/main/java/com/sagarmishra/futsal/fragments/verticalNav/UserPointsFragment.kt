@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.sagarmishra.futsal.DotsPricingActivity
 import com.sagarmishra.futsal.MainActivity
 import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.Repository.TeamRepository
@@ -37,6 +38,7 @@ class UserPointsFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener,View.
     private lateinit var swipeRefresh : SwipeRefreshLayout
     private lateinit var tvFutsalPoint2 : TextView
     private lateinit var ivTitles : ImageView
+    private lateinit var tvView : TextView
     private lateinit var dialog:Dialog
     var selectedTitle:String = ""
     var titleViewer:MutableList<String> = mutableListOf()
@@ -51,11 +53,13 @@ class UserPointsFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener,View.
         swipeRefresh = view.findViewById(R.id.swipeRefresh)
         tvFutsalPoint2 = view.findViewById(R.id.tvFutsalPoints2)
         ivTitles = view.findViewById(R.id.ivTitles)
+        tvView = view.findViewById(R.id.tvView)
         initialize()
         swipeRefresh.setOnRefreshListener(this)
         tvFutsalPoints.setOnClickListener(this)
         tvFutsalPoint2.setOnClickListener(this)
         ivTitles.setOnClickListener(this)
+        tvView.setOnClickListener(this)
         return view
     }
 
@@ -184,6 +188,11 @@ class UserPointsFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener,View.
             }
             R.id.ivTitles ->{
                 dialog.show()
+            }
+            R.id.tvView ->{
+                var intent = Intent(requireContext(),DotsPricingActivity::class.java)
+                startActivity(intent)
+                startActivity(intent)
             }
         }
     }

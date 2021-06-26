@@ -8,6 +8,14 @@
     android:layout_margin="8dp"
     tools:context=".fragments.tournament_screens.ResultFragment">
 
+    <LinearLayout
+        android:id="@+id/layoutOverall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
@@ -32,6 +40,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recycler"/>
+    </LinearLayout>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Will Be Available Soon"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:id="@+id/tvInfo"
+        />
 
 </LinearLayout>

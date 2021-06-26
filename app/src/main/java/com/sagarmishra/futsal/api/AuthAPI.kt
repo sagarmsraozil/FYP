@@ -97,4 +97,9 @@ interface AuthAPI {
         @Header("Authorization") token:String
     ):Response<GlobalResponse>
 
+    @GET("myDotsPayment")
+    suspend fun dotsPayment(
+        @Header("Authorization") token:String
+    ):Response<DotsPricingResponse>
+
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +29,8 @@ class ResultFragment : Fragment() {
     private lateinit var etSearch:AutoCompleteTextView
     private lateinit var tvMatches:TextView
     private lateinit var recycler:RecyclerView
+    private lateinit var tvInfo:TextView
+    private lateinit var layoutOverall:LinearLayout
     var lstTournamentMatches:MutableList<TournamentMatch> = mutableListOf()
     var lstTeamName:MutableList<String> = mutableListOf()
     private lateinit var adapter:TournamentResultAdapter
@@ -40,6 +43,8 @@ class ResultFragment : Fragment() {
         etSearch = view.findViewById(R.id.etSearch)
         tvMatches = view.findViewById(R.id.tvMatches)
         recycler = view.findViewById(R.id.recycler)
+        tvInfo = view.findViewById(R.id.tvInfo)
+        layoutOverall = view.findViewById(R.id.layoutOverall)
         initialize()
         searchWork()
         return view
@@ -67,13 +72,25 @@ class ResultFragment : Fragment() {
 
                     withContext(Dispatchers.Main)
                     {
-                        tvMatches.text = "${lstTournamentMatches.size} matches"
-                        adapter = TournamentResultAdapter(requireContext(),lstTournamentMatches)
-                        recycler.adapter = adapter
-                        recycler.layoutManager = LinearLayoutManager(requireContext())
-                        var searchAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_expandable_list_item_1,lstTeamName)
-                        etSearch.setAdapter(searchAdapter)
-                        etSearch.threshold = 1
+                        if(lstTournamentMatches.size > 0)
+                        {
+                            tvMatches.text = "${lstTournamentMatches.size} matches"
+                            adapter = TournamentResultAdapter(requireContext(),lstTournamentMatches)
+                            recycler.adapter = adapter
+                            recycler.layoutManager = LinearLayoutManager(requireContext())
+                            var searchAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_expandable_list_item_1,lstTeamName)
+                            etSearch.setAdapter(searchAdapter)
+                            etSearch.threshold = 1
+
+                            layoutOverall.visibility = View.VISIBLE
+                            tvInfo.visibility = View.GONE
+
+                        }
+                        else
+                        {
+                            layoutOverall.visibility = View.GONE
+                            tvInfo.visibility = View.VISIBLE
+                        }
 
                     }
                 }

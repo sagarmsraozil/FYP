@@ -132,6 +132,17 @@
                     android:layout_gravity="center"
                     />
 
+                <TextView
+                    android:id="@+id/tvFP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{instance.superPrice>0?String.valueOf(instance.superPrice*2)+`FP`:String.valueOf(instance.price*2)+`FP`}"
+                    android:textStyle="normal"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    />
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
