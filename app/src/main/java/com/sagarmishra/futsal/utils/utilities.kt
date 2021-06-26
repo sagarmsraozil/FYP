@@ -10,11 +10,11 @@ import java.time.temporal.ChronoUnit
 fun dateConversion(date:String):String
 {
     var partition = date.split("-").toMutableList()
-    if(partition[1].toInt() < 10)
+    if(partition[1].toInt() < 10 && partition[1].length == 1)
     {
         partition[1] = "0${partition[1]}"
     }
-    if(partition[2].toInt() < 10)
+    if(partition[2].toInt() < 10 && partition[1].length == 1)
     {
         partition[2] = "0${partition[2]}"
     }

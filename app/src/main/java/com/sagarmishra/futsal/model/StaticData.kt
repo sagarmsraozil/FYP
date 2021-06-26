@@ -27,6 +27,9 @@ object StaticData {
     var matchPlayed:String = ""
     var titleReceiveCount:Int = 0
     var tournamentId:String = ""
+    var playerTeam:MutableMap<String,String> = mutableMapOf()
+    var unseenMessage:MutableMap<String,Int> = mutableMapOf()
+    var receiverId:String = ""
 
 
     fun makeDateAndTime():MutableList<DateAndTime>

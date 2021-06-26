@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
     private lateinit var verticalNavView : NavigationView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     var selected = R.id.nav_home
-    var myFrags:MutableList<Fragment> = mutableListOf(HomeFragment(),TournamentFragment(),ChatFragment(),MyBookingsFragment(),AccountFragment(),ActivationFragment(),GiveawayFragment(),UserPointsFragment(),TeamFragment(),TournamentsFragment()
+    var myFrags:MutableList<Fragment> = mutableListOf(HomeFragment(),TournamentFragment(),ChatFragment(),MyBookingsFragment(),AccountFragment(),ActivationFragment(),GiveawayFragment(),UserPointsFragment(),TeamFragment(),TournamentsFragment(),ChatsFragment()
     )
-    var navChangings:MutableList<Int> = mutableListOf(R.id.nav_home,R.id.nav_tournament,R.id.nav_chats,R.id.nav_bookings,R.id.nav_account,R.id.activate,R.id.giveaway,R.id.warning,R.id.team,R.id.tournament)
+    var navChangings:MutableList<Int> = mutableListOf(R.id.nav_home,R.id.nav_tournament,R.id.nav_chats,R.id.nav_bookings,R.id.nav_account,R.id.activate,R.id.giveaway,R.id.warning,R.id.team,R.id.tournament,R.id.chat)
     private lateinit var sensorManager:SensorManager
     private var sensor:Sensor?=null
     private var sensor2:Sensor?=null
@@ -236,7 +236,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
     private fun verticalOff()
     {
         var verticalFrag:MutableList<Int> = mutableListOf(
-            R.id.activate,R.id.giveaway,R.id.warning
+            R.id.activate,R.id.giveaway,R.id.warning,R.id.tournament,R.id.chat,R.id.team
         )
 
         for(i in verticalFrag)
@@ -312,6 +312,13 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
                 selected = R.id.tournament
                 horizontalOff()
                 verticalNavView.menu.findItem(R.id.tournament).isChecked = true
+            }
+
+            R.id.chat ->{
+                openFragment(ChatsFragment())
+                selected = R.id.chat
+                horizontalOff()
+                verticalNavView.menu.findItem(R.id.chat).isChecked = true
             }
 
 

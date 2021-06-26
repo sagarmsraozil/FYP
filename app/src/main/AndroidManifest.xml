@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Futsal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DotsPricingActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".DotsPricingActivity" />
         <activity android:name=".SingleTournamentActivity" />
         <activity android:name=".TopRankerActivity" />
         <activity android:name=".ChallengeActivity" />

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="160dp"
+    android:layout_margin="6dp"
+    android:padding="4dp"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/cvProfile"
+        android:src="@drawable/logoteam"
+        android:layout_gravity="center"
+        app:civ_border_color="#014367"
+        app:civ_border_width="3dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sagar Mishra"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
+        android:id="@+id/tvPlayerName"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sagarmsra(18 yrs)"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:id="@+id/tvUsername"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S1 Legend"
+        android:textColor="@color/white"
+        android:background="#021A32"
+        android:padding="4dp"
+        android:elevation="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:id="@+id/tvTitle"/>
+
+    <Button
+        android:id="@+id/btnMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        android:drawableRight="@drawable/ic_message"
+        android:drawableTint="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#045F91"
+        />
+
+
+
+</LinearLayout>
