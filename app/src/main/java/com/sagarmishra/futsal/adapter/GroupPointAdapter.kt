@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.entityapi.TournamentGroup
 
@@ -33,6 +35,7 @@ class GroupPointAdapter(val context:Context,var lstPoints:MutableList<MutableLis
         adapter2 = PointAdjustAdapter(context,group)
         holder.recycler.adapter = adapter2
         holder.recycler.layoutManager = LinearLayoutManager(context)
+
     }
 
     override fun getItemCount(): Int {

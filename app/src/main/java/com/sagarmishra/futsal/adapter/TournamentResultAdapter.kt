@@ -155,6 +155,16 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
             var draw2:TextView = dialog.findViewById(R.id.draw2)
             var tvScoreLine:TextView = dialog.findViewById(R.id.tvScoreLine)
             var predictionLayout:LinearLayout = dialog.findViewById(R.id.layoutPrediction)
+            var historyRecord:LinearLayout = dialog.findViewById(R.id.historyRecord)
+            var tvMatchPlayed:TextView = dialog.findViewById(R.id.tvMatchPlayed)
+            var tvWins1:TextView = dialog.findViewById(R.id.tvWins1)
+            var tvWins2:TextView = dialog.findViewById(R.id.tvWins2)
+            var tvDraw1:TextView = dialog.findViewById(R.id.tvDraw1)
+            var tvDraw2:TextView = dialog.findViewById(R.id.tvDraw2)
+            var tvLoss1:TextView = dialog.findViewById(R.id.tvLoss1)
+            var tvLoss2:TextView = dialog.findViewById(R.id.tvLoss2)
+            var tvGoal1:TextView = dialog.findViewById(R.id.tvGoals1)
+            var tvGoal2:TextView = dialog.findViewById(R.id.tvGoals2)
 
             ivCross.setOnClickListener {
                 dialog.dismiss()
@@ -194,10 +204,53 @@ class TournamentResultAdapter(val context:Context,var lstMatches:MutableList<Tou
                 predictionLayout.visibility = View.GONE
             }
 
+            //history implementation
+            if(StaticData.historyTournament.size > 0)
+            {
+                if(match.status == "Starting Soon" && match.gameDate != null)
+                {
+                    var tournamentMatch = match.team1!!._id+" vs "+match.team2!!._id
+                    var analyzeData = StaticData.historyTournament.filter {
+                        it.match!! == tournamentMatch
+                    }
+                    if(analyzeData.size > 0)
+                    {
+                        var data = analyzeData[0]
+                        tvMatchPlayed.text = "Matches Played: ${data.matches}"
+                        tvWins1.text = data.team1!![1].toString()
+                        tvWins2.text = data.team2!![1].toString()
+                        tvLoss1.text = data.team1!![3].toString()
+                        tvLoss2.text = data.team2!![3].toString()
+                        tvDraw1.text = data.team1!![2].toString()
+                        tvDraw2.text = data.team2!![2].toString()
+                        tvGoal1.text = data.team1!![0].toString()
+                        tvGoal2.text = data.team2!![0].toString()
+                        historyRecord.visibility = View.VISIBLE
+                    }
+                    else
+                    {
+                        historyRecord.visibility = View.GONE
+                    }
+                }
+                else
+                {
+                    historyRecord.visibility = View.GONE
+                }
+
+            }
+            else
+            {
+                historyRecord.visibility = View.GONE
+            }
+
+
+
 
             holder.matchAnalysis.setOnClickListener {
                 dialog.show()
             }
+
+
 
 
         }

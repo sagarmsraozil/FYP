@@ -69,8 +69,8 @@ class TournamentMatchFragment : Fragment() {
                     var container:MutableList<String> = mutableListOf()
                     container.addAll(team1)
                     container.addAll(team2)
-                    lstFutsalNameAndTCode.addAll(lstFName.toMutableList())
-                    lstFutsalNameAndTCode.addAll(lstTCode.toMutableList())
+                    lstFutsalNameAndTCode.addAll(lstFName.toMutableSet().toMutableList())
+                    lstFutsalNameAndTCode.addAll(lstTCode.toMutableSet().toMutableList())
                     lstFutsalNameAndTCode.addAll(container.toMutableSet().toMutableList())
                     lstFutsalNameAndTCode.remove("Team Genexus")
 

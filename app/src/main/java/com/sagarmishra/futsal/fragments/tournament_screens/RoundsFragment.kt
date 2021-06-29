@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.ramotion.foldingcell.FoldingCell
 import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.Repository.TournamentRepository
@@ -103,6 +105,8 @@ class RoundsFragment : Fragment(),View.OnClickListener {
                         adapter = GroupPointAdapter(requireContext(),pointsData)
                         recycler.adapter = adapter
                         recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+                        var snapHelper: SnapHelper = PagerSnapHelper()
+                        snapHelper.attachToRecyclerView(recycler)
                     }
                 }
                 else

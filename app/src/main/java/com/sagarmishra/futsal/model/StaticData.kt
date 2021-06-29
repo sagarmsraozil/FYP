@@ -2,6 +2,7 @@ package com.sagarmishra.futsal.model
 
 import com.sagarmishra.futsal.entityapi.AuthUser
 import com.sagarmishra.futsal.entityapi.Battle
+import com.sagarmishra.futsal.entityapi.HistoryRecord
 import com.sagarmishra.futsal.entityapi.Team
 import com.sagarmishra.futsal.entityroom.User
 import java.text.SimpleDateFormat
@@ -30,6 +31,7 @@ object StaticData {
     var playerTeam:MutableMap<String,String> = mutableMapOf()
     var unseenMessage:MutableMap<String,Int> = mutableMapOf()
     var receiverId:String = ""
+    var historyTournament:MutableList<HistoryRecord> = mutableListOf()
 
 
     fun makeDateAndTime():MutableList<DateAndTime>

@@ -59,6 +59,7 @@ class ResultFragment : Fragment() {
                 val response = repo.tournamentMatches(StaticData.tournamentId)
                 if(response.success == true)
                 {
+                    StaticData.historyTournament = response.analysis!!
                     lstTournamentMatches = response.data!!
                     lstTeamName = lstTournamentMatches.map{
                         it.team1!!.teamName!!

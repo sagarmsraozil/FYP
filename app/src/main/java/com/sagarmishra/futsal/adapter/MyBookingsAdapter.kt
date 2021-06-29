@@ -1,13 +1,16 @@
 package com.sagarmishra.futsal.adapter
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sagarmishra.futsal.MyBookingDetailsActivity
+import com.sagarmishra.futsal.R
 import com.sagarmishra.futsal.Repository.BookingRepository
 import com.sagarmishra.futsal.api.RetrofitService
 import com.sagarmishra.futsal.databinding.MyBookingsLayoutBinding
@@ -17,16 +20,17 @@ import com.sagarmishra.futsal.model.StaticData
 import com.sagarmishra.futsal.utils.snackbar
 import kotlinx.coroutines.*
 
-class MyBookingsAdapter(val context: Context, var lstBookings:MutableList<Booking>):RecyclerView.Adapter<MyBookingsAdapter.MyBookingsViewHolder>() {
-    class MyBookingsViewHolder(val myBookingsLayoutBinding: MyBookingsLayoutBinding):RecyclerView.ViewHolder(myBookingsLayoutBinding.root)
+class MyBookingsAdapter(var activity:Activity,val context: Context, var lstBookings:MutableList<Booking>):RecyclerView.Adapter<MyBookingsAdapter.MyBookingsViewHolder>() {
+    class MyBookingsViewHolder(val myBookingsLayoutBinding: MyBookingsLayoutBinding,activity:Activity):RecyclerView.ViewHolder(myBookingsLayoutBinding.root)
     {
         var myBookings = myBookingsLayoutBinding
+        val tvQueue:TextView = activity.findViewById(R.id.tvQueue)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyBookingsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val bb = MyBookingsLayoutBinding.inflate(inflater,parent,false)
-        return MyBookingsViewHolder(bb)
+        return MyBookingsViewHolder(bb,activity)
     }
 
     override fun onBindViewHolder(holder: MyBookingsViewHolder, position: Int) {
@@ -83,6 +87,7 @@ class MyBookingsAdapter(val context: Context, var lstBookings:MutableList<Bookin
                                 withContext(Dispatchers.Main)
                                 {
                                     lstBookings.removeAt(position)
+                                    holder.tvQueue.text = "${lstBookings.size} matches in queue."
                                     notifyDataSetChanged()
                                     holder.myBookings.ivImage.snackbar("${response.message}")
                                 }

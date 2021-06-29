@@ -192,7 +192,7 @@ class UserPointsFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener,View.
             R.id.tvView ->{
                 var intent = Intent(requireContext(),DotsPricingActivity::class.java)
                 startActivity(intent)
-                startActivity(intent)
+                
             }
         }
     }

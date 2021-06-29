@@ -28,7 +28,7 @@ class MessageAdapter(val context:Context,var lstMessages:MutableList<Chat>):Recy
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         var message = lstMessages[position]
 
-        if(message.sender!!._id == StaticData.user!!._id)
+        if(message.sender!!._id!! == StaticData.user!!._id)
         {
             holder.layoutMessage.setBackgroundColor(Color.parseColor("#CCC969"))
         }

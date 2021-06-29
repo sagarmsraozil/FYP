@@ -236,7 +236,7 @@ class MyBookingsFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.On
         tvQueue.text = "${nonExpired.size} matches in queue"
         tvRecords.text = "${expired.size} records"
         adapter =
-            MyBookingsAdapter(requireContext(), nonExpired.toMutableList())
+            MyBookingsAdapter(requireActivity(),requireContext(), nonExpired.toMutableList())
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(
             requireContext(),
@@ -310,7 +310,7 @@ class MyBookingsFragment : Fragment(),View.OnClickListener,SwipeRefreshLayout.On
                         tvQueue.text = "${nonExpiredSearch.size} matches searched"
                         tvRecords.text = "${expiredSearch.size} records searched"
 
-                        adapter = MyBookingsAdapter(requireContext(), nonExpiredSearch.toMutableList())
+                        adapter = MyBookingsAdapter(requireActivity(),requireContext(), nonExpiredSearch.toMutableList())
                         recycler.adapter = adapter
                         adapter.notifyDataSetChanged()
 

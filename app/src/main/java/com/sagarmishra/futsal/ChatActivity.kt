@@ -11,16 +11,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.gson.Gson
 import com.sagarmishra.futsal.Repository.ChatRepository
 import com.sagarmishra.futsal.adapter.MessageAdapter
 import com.sagarmishra.futsal.entityapi.AuthUser
 import com.sagarmishra.futsal.entityapi.Chat
 import com.sagarmishra.futsal.model.StaticData
+
 import com.sagarmishra.futsal.utils.snackbar
+import io.socket.client.IO
+import io.socket.client.Socket
+import io.socket.emitter.Emitter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
+import java.net.URISyntaxException
 
 @Suppress("Deprecation")
 class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,View.OnClickListener {
@@ -33,6 +40,9 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
     private lateinit var adapter:MessageAdapter
     private lateinit var swipe:SwipeRefreshLayout
     var messags:MutableList<Chat> = mutableListOf()
+
+    private lateinit var socket:Socket
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
@@ -41,6 +51,23 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
         initialize()
         swipe.setOnRefreshListener(this)
         btnSend.setOnClickListener(this)
+//
+//        var opts: IO.Options = IO.Options().apply {
+//            transports = arrayOf("websocket")
+//        }
+
+
+        try
+        {
+            socket = IO.socket("http://192.168.1.68:90")
+            socket.connect()
+        }
+        catch(ex: URISyntaxException)
+        {
+            println(ex.printStackTrace())
+            println(ex)
+        }
+//        socket.on("chatMessage", onUpdateChat)
     }
 
     private fun binding()
@@ -57,7 +84,15 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
     {
         player = intent.getParcelableExtra("player")!!
         var playerTeam = StaticData.playerTeam[player._id]
-        tvReceiver.text = "${player.userName} (${playerTeam})"
+        if(playerTeam == null)
+        {
+            tvReceiver.text = "${player.userName} (Not in a team)"
+        }
+        else
+        {
+            tvReceiver.text = "${player.userName} (${playerTeam})"
+        }
+
         StaticData.unseenMessage[player._id] = 0
 
         CoroutineScope(Dispatchers.IO).launch {
@@ -105,6 +140,7 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
         var intent = Intent(this,ChatActivity::class.java)
         intent.putExtra("player",player)
         startActivity(intent)
+        finish()
     }
 
     override fun onClick(v: View?) {
@@ -122,6 +158,9 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
                             {
                                 withContext(Dispatchers.Main)
                                 {
+                                    val gson = Gson()
+                                    var json = gson.toJson(response.data!!)
+//                                    socket.emit("chatMessage",json)
                                     etMessage.text!!.clear()
                                 }
                             }
@@ -143,4 +182,17 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
             }
         }
     }
+
+
+//    var onUpdateChat = Emitter.Listener {
+//        var gson = Gson()
+//        var stringfyData = it[0].toString()
+//        var stringJSON = gson.fromJson(stringfyData,Chat::class.java)
+//
+//        messags.add(stringJSON)
+//        adapter = MessageAdapter(this,messags)
+//        recycler.adapter = adapter
+//        adapter.notifyDataSetChanged()
+//    }
+
 }

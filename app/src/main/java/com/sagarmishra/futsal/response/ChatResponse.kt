@@ -1,5 +1,6 @@
 package com.sagarmishra.futsal.response
 
+
 import com.sagarmishra.futsal.entityapi.Chat
 
 data class ChatResponse(
