@@ -28,6 +28,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.URISyntaxException
+import kotlin.reflect.typeOf
 
 @Suppress("Deprecation")
 class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,View.OnClickListener {
@@ -51,23 +52,22 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
         initialize()
         swipe.setOnRefreshListener(this)
         btnSend.setOnClickListener(this)
-//
-//        var opts: IO.Options = IO.Options().apply {
-//            transports = arrayOf("websocket")
-//        }
 
 
         try
         {
             socket = IO.socket("http://192.168.1.68:90")
             socket.connect()
+            socket.on("chatMessage",onUpdateChat)
         }
         catch(ex: URISyntaxException)
         {
             println(ex.printStackTrace())
             println(ex)
         }
-//        socket.on("chatMessage", onUpdateChat)
+
+
+
     }
 
     private fun binding()
@@ -160,7 +160,8 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
                                 {
                                     val gson = Gson()
                                     var json = gson.toJson(response.data!!)
-//                                    socket.emit("chatMessage",json)
+                                    var jsonObj = JSONObject(json)
+                                    socket.emit("chatMessage",jsonObj)
                                     etMessage.text!!.clear()
                                 }
                             }
@@ -184,15 +185,19 @@ class ChatActivity : AppCompatActivity(),SwipeRefreshLayout.OnRefreshListener,Vi
     }
 
 
-//    var onUpdateChat = Emitter.Listener {
-//        var gson = Gson()
-//        var stringfyData = it[0].toString()
-//        var stringJSON = gson.fromJson(stringfyData,Chat::class.java)
-//
-//        messags.add(stringJSON)
-//        adapter = MessageAdapter(this,messags)
-//        recycler.adapter = adapter
-//        adapter.notifyDataSetChanged()
-//    }
+    var onUpdateChat = Emitter.Listener {
+        var gson = Gson()
+        var stringfyData = it[0].toString()
+        var jsonObject = JSONObject(stringfyData)
+        var stringJSON = gson.fromJson(jsonObject.toString(),Chat::class.java)
+        messags.add(stringJSON)
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter = MessageAdapter(this@ChatActivity,messags)
+            recycler.adapter = adapter
+            adapter.notifyDataSetChanged()
+            recycler.scrollToPosition(recycler!!.adapter!!.itemCount-1)
+        }
+
+    }
 
 }

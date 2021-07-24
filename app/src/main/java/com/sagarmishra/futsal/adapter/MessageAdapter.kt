@@ -32,7 +32,10 @@ class MessageAdapter(val context:Context,var lstMessages:MutableList<Chat>):Recy
         {
             holder.layoutMessage.setBackgroundColor(Color.parseColor("#CCC969"))
         }
-
+        else
+        {
+            holder.layoutMessage.setBackgroundColor(Color.parseColor("#ffffff"))
+        }
 
         holder.tvMessage.text = message.message
         holder.tvTime.text = message.dateAndTime

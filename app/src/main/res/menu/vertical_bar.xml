@@ -5,15 +5,15 @@
                 <menu>
                     <item android:title="Team"
                         android:id="@+id/team"
-                        android:icon="@drawable/boy"/>
+                        android:icon="@drawable/layout_teams"/>
 
                     <item android:title="Tournament"
                         android:id="@+id/tournament"
-                        android:icon="@drawable/boy"/>
+                        android:icon="@drawable/ic_tournament_log"/>
 
                     <item android:title="Chat"
                         android:id="@+id/chat"
-                        android:icon="@drawable/boy"/>
+                        android:icon="@drawable/ic_message"/>
 
                 </menu>
             </item>
@@ -23,10 +23,10 @@
         <menu>
             <item android:title="Account Activation"
                 android:id="@+id/activate"
-                android:icon="@drawable/boy"/>
+                android:icon="@drawable/ic_activate"/>
             <item android:title="Points Counter"
                 android:id="@+id/warning"
-                android:icon="@drawable/boy"/>
+                android:icon="@drawable/ic_points"/>
         </menu>
         </item>
     </group>
@@ -36,7 +36,10 @@
         <menu>
             <item android:title="Giveaway"
                 android:id="@+id/giveaway"
-                android:icon="@drawable/boy"/>
+                android:icon="@drawable/ic_giveaway"/>
+            <item android:title="Rules"
+                android:id="@+id/rules"
+                android:icon="@drawable/ic_info"/>
         </menu>
         </item>
     </group>

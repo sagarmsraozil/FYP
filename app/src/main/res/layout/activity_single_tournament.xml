@@ -108,7 +108,15 @@
                 android:visibility="gone"
                 android:id="@+id/btnIneligible"/>
 
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 matches remaining"
+                android:layout_margin="4dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/tvRemaining"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

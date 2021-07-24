@@ -1,11 +1,13 @@
 package com.sagarmishra.futsal
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +51,7 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
     private lateinit var adapter:ParticipatedTeamAdapter
     private lateinit var vpAdapter:SingleTournamentFragmentAdapter
     private lateinit var swipeRefresh:SwipeRefreshLayout
+    private lateinit var tvRemaining:TextView
 
     var buttonAuthorize:MutableList<Boolean> = mutableListOf()
     var tid:String? = null
@@ -66,6 +69,7 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
         btnRemove.setOnClickListener(this)
         btnParticipate.setOnClickListener(this)
         swipeRefresh.setOnRefreshListener(this)
+        btnIneligible.setOnClickListener(this)
 
         vpAdapter = SingleTournamentFragmentAdapter(supportFragmentManager,lifecycle,titleAndFragment.values.toMutableList())
         vp.adapter = vpAdapter
@@ -100,6 +104,7 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
         tabLayout = findViewById(R.id.tabLayout)
         vp = findViewById(R.id.vp)
         swipeRefresh = findViewById(R.id.swipeRefresh)
+        tvRemaining = findViewById(R.id.tvRemaining)
         buttons.addAll(mutableListOf(btnPlayed,btnPlaying,btnParticipate,btnRemove,btnPlaying,btnClosed,btnOpeningSoon,btnFinished,btnIneligible))
     }
 
@@ -138,6 +143,15 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
                         recycler.layoutManager = LinearLayoutManager(this@SingleTournamentActivity,LinearLayoutManager.VERTICAL,false)
                         tvTournamentName.text = tournament.tournamentName
                         tvParticipation.text = "${tournament.participationStarts2} to ${tournament.participationEnds2}"
+                        if(response.remaining > 0)
+                        {
+                            tvRemaining.text = "${response.remaining} matches remaining."
+                            tvRemaining.visibility = View.VISIBLE
+                        }
+                        else
+                        {
+                            tvRemaining.visibility = View.GONE
+                        }
                         tvAge.text = "${tournament.minAgeGroup}-${tournament.maxAgeGroup}"
                         if(tournament.startsFrom2 != null)
                         {
@@ -262,6 +276,19 @@ class SingleTournamentActivity : AppCompatActivity(),View.OnClickListener,SwipeR
                     }
 
                 }
+            }
+
+            R.id.btnIneligible ->{
+                var alert = AlertDialog.Builder(this@SingleTournamentActivity)
+                alert.setTitle("Ineligible criteria")
+                alert.setMessage("Age Requirement.\nNo Leader or Coleader of the clan.\nLate\nCannot play more than two tournaments at a same time.")
+                alert.setPositiveButton("Ok"){ dialogInterface: DialogInterface, i: Int ->
+
+                }
+
+                var alertt = alert.create()
+                alertt.setCancelable(false)
+                alertt.show()
             }
         }
     }

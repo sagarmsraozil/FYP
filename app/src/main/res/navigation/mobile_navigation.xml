@@ -54,4 +54,10 @@
         android:name="com.sagarmishra.futsal.fragments.verticalNav.TournamentsFragment"
         android:label="fragment_tournaments"
         tools:layout="@layout/fragment_tournaments" />
+    <fragment
+        android:id="@+id/rules"
+        android:name="com.sagarmishra.futsal.fragments.verticalNav.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+
 </navigation>
